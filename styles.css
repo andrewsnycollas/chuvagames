@@ -8,16 +8,20 @@ body {
     background-color: #0BAFE6;
 }
 
+/* Navbar */
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;  /* Ensures all items are vertically centered */
     padding: 1em;
     background-color: #333;
 }
 
 nav .logo {
+    display: flex;
+    align-items: center;  /* Centers the logo image and text vertically */
     font-size: 1.5em;
+    color: #fff;
 }
 
 nav .logo-img {
@@ -37,6 +41,7 @@ nav ul li a {
     text-decoration: none;
     font-size: 1em;
 }
+
 
 .hero {
     height: 100vh;
