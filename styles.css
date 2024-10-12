@@ -43,12 +43,19 @@ nav ul li a {
 }
 
 
+/* Hero Section */
 .hero {
     height: 100vh;
     background: url('hero-image.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hero-logo {
+    width: 400px;  /* Adjust the size of the logo */
+    height: auto;  /* Maintain the aspect ratio */
+    margin-bottom: 1em; /* Space between the logo and the text */
 }
 
 .hero-content {
@@ -64,6 +71,12 @@ nav ul li a {
     font-size: 1.5em;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;  /* Adds space between the two buttons */
+}
+
 .btn {
     display: inline-block;
     padding: 0.75em 1.5em;
@@ -73,6 +86,11 @@ nav ul li a {
     font-weight: bold;
     border-radius: 5px;
     margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d0454f;  /* Darkens the button on hover */
 }
 
 .featured-game, .about-us {
@@ -178,4 +196,84 @@ footer p {
     height: 100%;
     border-radius: 10px;
     transition: width 0.5s ease;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* For tablets and smaller screens */
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5em;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.25em;
+    }
+
+    .btn {
+        padding: 0.5em 1em;
+    }
+
+    .team-member {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pixel-avatar {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .bio {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile screens */
+    nav ul {
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .btn {
+        padding: 0.5em 0.75em;
+    }
+
+    .team-member {
+        width: 90%;
+        padding: 0.5em;
+    }
+
+    .pixel-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .bio h3 {
+        font-size: 1.25em;
+    }
+
+    .bio p {
+        font-size: 0.9em;
+    }
+
+    .skill span {
+        width: 100px;
+    }
 }
