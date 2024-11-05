@@ -48,13 +48,23 @@
         <p>We are a passionate team of game developers, storytellers, and artists dedicated to creating unforgettable gaming experiences.</p>
     </section>
 
-	<!-- Footer -->
+<!-- Footer -->
 	<footer>
 		<p>&copy; 2024 CHUVA Games CO. All Rights Reserved.</p>
 		<div class="social">
 			<a href="https://www.youtube.com/@CHUVAGamesco" target="_blank">YouTube</a> | 
 			<a href="https://discord.gg/Py6nAHGcDX">Discord</a> | 
-			<a href="mailto:andrewsnycollas@chuvagames.co">Email</a>
+			<a href="#" id="copy-email">Email</a>
+				<script>
+					document.getElementById('copy-email').addEventListener('click', function() {
+						const email = 'andrewsnycollas@chuvagames.co'; // Replace with your email address
+						navigator.clipboard.writeText(email).then(function() {
+							alert('Email copied to clipboard: ' + email);
+						}, function(err) {
+							console.error('Could not copy email: ', err);
+						});
+					});
+				</script>
 		</div>
 	</footer>
 
