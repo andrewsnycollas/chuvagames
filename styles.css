@@ -10,11 +10,17 @@ body {
 
 /* Navbar */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  /* Ensures all items are vertically centered */
-    padding: 1em;
-    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent background */
+    transform: translateY(-100%); /* Initially hide the navbar */
+}
+
+nav.show {
+    transform: translateY(0); /* Show the navbar */
 }
 
 nav .logo {
@@ -149,6 +155,16 @@ footer p {
     margin-right: 20px; /* Space between the avatar and the bio */
 }
 
+.avatar-gif {
+	width: 150px;
+    height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	cursor: pointer;
+	transition: opacity 0.3s ease;
+	margin-right: 20px;
+}
+
 .bio {
     max-width: 600px; /* Full width for the bio since only one image */
 }
@@ -231,7 +247,7 @@ footer p {
         width: 120px;
         height: 120px;
     }
-
+	
     .bio {
         max-width: 100%;
     }
