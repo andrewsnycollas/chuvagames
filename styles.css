@@ -13,10 +13,8 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 999;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.8); /* Transparent background */
-    transform: translateY(-100%); /* Initially hide the navbar */
+    background-color: rgba(0, 84, 166, 1); /* Transparent background */
+    transform: translateY(0); /* Initially hide the navbar */
 }
 
 nav.show {
@@ -162,7 +160,6 @@ footer p {
 	object-fit: cover;
 	cursor: pointer;
 	transition: opacity 0.3s ease;
-	margin-right: 20px;
 }
 
 .bio {
