@@ -1,0 +1,580 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #0BAFE6;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    transition: top 0.3s ease-in-out; /* Adiciona uma transição suave */
+    z-index: 999;
+  }
+  
+  .hide {
+    top: -150px; /* Esconde a header fora da viewport */
+  }
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Ensures all items are vertically centered */
+    padding: 1em;
+    background-color: #333333;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;  /* Centers the logo image and text vertically */
+    font-size: 1.5em;
+    color: #fff;
+}
+
+nav .logo-img {
+    width: 64px;  /* Adjust this to the desired width */
+    height: auto; /* Automatically adjusts height to maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+    
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.navselect {
+    color: #fff;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-color: #00000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.hero-logo {
+    width: 400px;  /* Adjust the size of the logo */
+    height: auto;  /* Maintain the aspect ratio */
+    margin-bottom: 1em; /* Space between the logo and the text */
+    margin-top: 15%;
+    
+}
+
+.hero-content {
+    text-align: center;
+    margin-bottom: 9%;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-top: 2%;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1em;  /* Adds space between the two buttons */
+}
+
+.btn2 {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: #F27961;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn2:hover {
+    background-color: #d0454f;  /* Darkens the button on hover */
+}
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #F27961;
+  --bs-btn-border-color: #d0454f;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d0454f;
+  --bs-btn-hover-border-color: #d0454f;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #d0454f;
+  --bs-btn-active-border-color: #F27961;
+  --bs-btn-active-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #0d6efd;
+  --bs-btn-disabled-border-color: #0d6efd;
+}
+
+.dropdown-menu-dark2 {
+    --bs-dropdown-color: #fff;
+    --bs-dropdown-bg: #00b1e9;
+    --bs-dropdown-border-color: var(--bs-border-color-translucent);
+    --bs-dropdown-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.795);
+    --bs-dropdown-link-color: #000000;
+    --bs-dropdown-link-hover-color: #fff;
+    --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+    --bs-dropdown-link-hover-bg: rgba(255, 255, 255, 0.15);
+    --bs-dropdown-link-active-color: #f7f6f6;
+    --bs-dropdown-link-active-bg: #7595c5;
+    --bs-dropdown-link-disabled-color: #adb5bd;
+    --bs-dropdown-header-color: #adb5bd;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.795)
+}
+
+.dropup,
+.dropend,
+.dropdown,
+.dropstart,
+.dropup-center,
+.dropdown-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+  .dropdown-item:hover, .dropdown-item:focus {
+    background-color: #F27961;
+  }
+
+.featured-game, .about-us {
+    padding: 2em;
+    text-align: center;
+    background-color: #000000be;
+}
+
+.game-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 1em 0;
+}
+
+footer {
+    background-color: #333333;
+    text-align: center;
+    padding: 1em;
+}
+
+footer p {
+    margin: 0;
+}
+
+.social a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Team Section */
+.team {
+    padding: 2em;
+    background-color: #ffffff00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+    background-color: #ffffff;
+    padding: 1em;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
+    background-color: #ffffff;
+    padding: 1em;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+}
+
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+    background-color: #ffffff;
+    padding: 1em;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.pixel-avatar {
+    width: 150px; /* Size of the pixel avatar */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px; /* Space between the avatar and the bio */
+}
+
+.bio {
+    max-width: 600px; /* Full width for the bio since only one image */
+}
+
+.bio h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.bio p {
+    color: #525252;
+}
+
+
+/* Skills Section */
+.skills {
+    margin-top: 20px;
+}
+
+.skill {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.skill span {
+    width: 140px;
+    font-weight: bold;
+    color: #525252;
+    margin-right: 10px;
+}
+
+.skill-bar {
+    background-color: #ddd;
+    border-radius: 10px;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    background-color: #0BAFE6; /* Progress bar color */
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* For tablets and smaller screens */
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5em;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.25em;
+    }
+
+    .btn {
+        padding: 0.5em 1em;
+    }
+
+    .team-member {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pixel-avatar {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 120px;
+        height: 120px;
+    }
+
+    .bio {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* For mobile screens */
+    nav ul {
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .btn {
+        padding: 0.5em 0.75em;
+    }
+
+    .team-member {
+        width: 90%;
+        padding: 0.5em;
+    }
+
+    .pixel-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .bio h3 {
+        font-size: 1.25em;
+    }
+
+    .bio p {
+        font-size: 0.9em;
+    }
+
+    .skill span {
+        width: 100px;
+    }
+}
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -100;
+}
+
+@media (min-aspect-ratio: 16/9){
+.back-video{
+width: 100%;
+height: auto;
+}
+}
+
+@media (max-aspect-ratio: 16/9){
+.back-video{
+width: auto;
+height: 100%;
+}
+}
+
+.category-section {
+        position: relative;
+        top: 220px;
+        left: 0;
+    }
+    
+.buywithus {
+    position: relative;
+    top: 180px;
+    left: 0;
+}    
+
+.video-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -120;
+    background-color: rgba(0,0,0,0.5);
+    filter: blur(0px);
+  }
+      
+  iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (min-aspect-ratio: 16/9) {
+    .video-container iframe {
+      /* height = 100 * (9 / 16) = 56.25 */
+      height: 56.25vw;
+      background-color: rgba(0,0,0,0.5);
+    }
+  }
+      
+  @media (max-aspect-ratio: 16/9) {
+    .video-container iframe {
+      /* width = 100 / (9 / 16) = 177.777777 */
+      width: 177.78vh;
+      background-color: rgba(0,0,0,0.5);
+    }
+  }
+
+  .iframe-container{
+    position: static;
+    width: 100%;
+    height: 0;
+    left: 350px;
+    top: 215px;
+    padding-bottom: 56.25%;
+  }
+  .iframe-container iframe{
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .white-text{
+    color: #fff
+  }
+
+  .btn-outline-warning {
+    --bs-btn-color: #ff6207;
+    --bs-btn-border-color: #ff6207;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #ff6207;
+    --bs-btn-hover-border-color: #ff6207;
+    --bs-btn-focus-shadow-rgb: 255, 193, 7;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #ff6207;
+    --bs-btn-active-border-color: #ff6207;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ff6207;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #ff6207;
+    --bs-gradient: none;
+  }
+
+  .btn-outline-steam {
+    --bs-btn-color: #1482b3;
+    --bs-btn-border-color: #1482b3;
+    --bs-btn-hover-color: #000000;
+    --bs-btn-hover-bg: #1482b3;
+    --bs-btn-hover-border-color: #1482b3;
+    --bs-btn-focus-shadow-rgb: 108, 117, 125;
+    --bs-btn-active-color: #000000;
+    --bs-btn-active-bg: #1482b3;
+    --bs-btn-active-border-color: #1482b3;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #1482b3;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #1482b3;
+    --bs-gradient: none;
+  }
+
+  .btn-outline-twitch {
+    --bs-btn-color: #6441a5 ;
+    --bs-btn-border-color: #6441a5 ;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #6441a5 ;
+    --bs-btn-hover-border-color: #6441a5 ;
+    --bs-btn-focus-shadow-rgb: 108, 117, 125;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #6441a5 ;
+    --bs-btn-active-border-color: #6441a5 ;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #6441a5 ;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #6441a5 ;
+    --bs-gradient: none;
+  }
+
+.socialbtn {
+    display: flex;
+    position: center;
+    gap: 5px;
+    
+}
+
+.btn-outline-light {
+    --bs-btn-color: #000000;
+    --bs-btn-border-color: #000000;
+    --bs-btn-hover-color: #f8f9fa;
+    --bs-btn-hover-bg: #000000;
+    --bs-btn-hover-border-color: #000000;
+    --bs-btn-focus-shadow-rgb: 248, 249, 250;
+    --bs-btn-active-color: #f8f9fa;
+    --bs-btn-active-bg: #000000;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #000000;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #000000;
+    --bs-gradient: none;
+  }
+
+  .gif {
+
+    width: 150px;
+    height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	cursor: pointer;
+	transition: opacity 0.3s ease;
+	margin-right: 20px;
+    animation-name: play;
+    animation-duration: 3s; /* Duração da animação */
+    animation-play-state: paused; /* Pausar por padrão */
+}
+
+.gif:hover {
+    animation-play-state: running; /* Iniciar a animação ao passar o mouse */
+}
+
+.pixel-avatar {
+    width: 150px; /* Size of the pixel avatar */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px; /* Space between the avatar and the bio */
+}
+
+.avatar-gif {
+	width: 150px;
+    height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	cursor: pointer;
+	transition: opacity 0.3s ease;
+	margin-right: 20px;
+}
