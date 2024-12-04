@@ -550,10 +550,9 @@ height: 100%;
 	border-radius: 50%;
 	object-fit: cover;
 	cursor: pointer;
-	transition: opacity 0.3s ease;
 	margin-right: 20px;
     animation-name: play;
-    animation-duration: 3s; /* Duração da animação */
+    animation-duration: 5s; /* Duração da animação */
     animation-play-state: paused; /* Pausar por padrão */
 }
 
@@ -575,6 +574,5 @@ height: 100%;
 	border-radius: 50%;
 	object-fit: cover;
 	cursor: pointer;
-	transition: opacity 0.3s ease;
 	margin-right: 20px;
 }

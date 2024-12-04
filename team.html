@@ -548,7 +548,9 @@
           });
     
           gif.addEventListener('mouseout', () => {
+            setTimeout(() => {
             gif.src = gif.dataset.static; // Volta para a imagem estática
+        }, 1000); // Delay to ensure the animation completes
           });
         });
       </script>
