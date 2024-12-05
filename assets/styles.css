@@ -243,19 +243,57 @@ footer p {
     max-width: 800px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.gif {
+
+    width: 150px;
+    height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	cursor: pointer;
+	margin-right: 20px;
+    animation-name: play;
+    animation-duration: 10s; /* Duração da animação */
+}
+
+.gif:hover {
+    animation-play-state: running; /* Iniciar a animação ao passar o mouse */
+}
+
 .pixel-avatar {
     width: 150px; /* Size of the pixel avatar */
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 20px; /* Space between the avatar and the bio */
+    margin-left: 20px;
 }
 
+.avatar-gif {
+	width: 150px;
+    height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	cursor: pointer;
+	margin-right: 20px;
+    margin-left: 20px;
+}
 .bio {
     max-width: 600px; /* Full width for the bio since only one image */
 }
 
+.bio h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
 .bio h3 {
+    margin: 0;
+    font-size: 1.0em;
+    color: #333;
+}
+
+.bio h2 {
     margin: 0;
     font-size: 1.5em;
     color: #333;
@@ -263,12 +301,16 @@ footer p {
 
 .bio p {
     color: #525252;
+    margin-right: 20px;
+
 }
 
 
 /* Skills Section */
 .skills {
     margin-top: 20px;
+    margin-right: 20px;
+    
 }
 
 .skill {
@@ -543,36 +585,4 @@ height: 100%;
     --bs-gradient: none;
   }
 
-  .gif {
-
-    width: 150px;
-    height: 150px;
-	border-radius: 50%;
-	object-fit: cover;
-	cursor: pointer;
-	margin-right: 20px;
-    animation-name: play;
-    animation-duration: 5s; /* Duração da animação */
-    animation-play-state: paused; /* Pausar por padrão */
-}
-
-.gif:hover {
-    animation-play-state: running; /* Iniciar a animação ao passar o mouse */
-}
-
-.pixel-avatar {
-    width: 150px; /* Size of the pixel avatar */
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 20px; /* Space between the avatar and the bio */
-}
-
-.avatar-gif {
-	width: 150px;
-    height: 150px;
-	border-radius: 50%;
-	object-fit: cover;
-	cursor: pointer;
-	margin-right: 20px;
-}
+  
