@@ -654,8 +654,8 @@ height: 100%;
   .progress-fill {
     height: 100%;
     border-radius: 10px;
-    background: linear-gradient(to right, #00BFFF, #0093c4, #00BFFF);
-    animation: colorChange 5s infinite alternate-reverse;
+    background: linear-gradient(to right, #0093c4, #00BFFF, #0093c4, #00BFFF, #0093c4);
+    animation: colorChange 7s infinite linear;
   }
   
   .progress-text {
