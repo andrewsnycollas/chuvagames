@@ -274,7 +274,7 @@ footer p {
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
-   margin: 25px;
+    margin: 25px;
   }
 
 .bio {
@@ -606,6 +606,21 @@ height: 100%;
     margin: 10px 5px; /* 20px para cima e para baixo, 7px para os lados */
     max-width: 730px;
   }
+
+  .avatar-hover {
+   display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    margin: 25px;
+
+
+  }
+
 
 
 .social-icon:hover {

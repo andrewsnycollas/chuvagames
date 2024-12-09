@@ -54,23 +54,23 @@ Additionally, follow us on social media to stay updated on all our projects.</p>
   
 <div class="icon-container">
     <br>
-    <img src="assets/images/icons/default/default_mail.png" href="#" id="copy-email" data-original-src="assets/images/icons/default/default_mail.png" data-hover-src="assets/images/icons/hover/hover_mail.png" class="social-icon" alt="Copy Email">
+    <img src="assets/images/icons/default/default_mail.png" href="#" id="copy-email" data-original-src="assets/images/icons/default/default_mail.png" data-hover-src="assets/images/icons/hover/hover_mail.png" class="social-icon social-icon-hover" alt="Copy Email">
     </a>
 
     <a href="https://discord.gg/Py6nAHGcDX" target="_blank">
-        <img src="assets/images/icons/default/default_discord.png" data-original-src="assets/images/icons/default/default_discord.png" data-hover-src="assets/images/icons/hover/hover_discord.png" class="social-icon" alt="Discord">
+        <img src="assets/images/icons/default/default_discord.png" data-original-src="assets/images/icons/default/default_discord.png" data-hover-src="assets/images/icons/hover/hover_discord.png" class="social-icon social-icon-hover" alt="Discord">
     </a>
     <a href="https://www.linkedin.com/company/chuva-games-co" target="_blank">
-        <img src="assets/images/icons/default/default_linkedin.png" data-original-src="assets/images/icons/default/default_linkedin.png" data-hover-src="assets/images/icons/hover/hover_linkedin.png" class="social-icon" alt="LinkedIn">
+        <img src="assets/images/icons/default/default_linkedin.png" data-original-src="assets/images/icons/default/default_linkedin.png" data-hover-src="assets/images/icons/hover/hover_linkedin.png" class="social-icon social-icon-hover" alt="LinkedIn">
     </a>
     
 
     <a href="https://www.instagram.com/chuvagames/" target="_blank">
-        <img src="assets/images/icons/default/default_insta.png" data-original-src="assets/images/icons/default/default_insta.png" data-hover-src="assets/images/icons/hover/hover_insta.png" class="social-icon" alt="LinkedIn">
+        <img src="assets/images/icons/default/default_insta.png" data-original-src="assets/images/icons/default/default_insta.png" data-hover-src="assets/images/icons/hover/hover_insta.png" class="social-icon social-icon-hover" alt="LinkedIn">
     </a>
 
     <a href="https://www.youtube.com/@ChuvaGames" target="_blank">
-        <img src="assets/images/icons/default/default_youtube.png" data-original-src="assets/images/icons/default/default_youtube.png" data-hover-src="assets/images/icons/hover/hover_youtube.png" class="social-icon" alt="LinkedIn">
+        <img src="assets/images/icons/default/default_youtube.png" data-original-src="assets/images/icons/default/default_youtube.png" data-hover-src="assets/images/icons/hover/hover_youtube.png" class="social-icon social-icon-hover" alt="LinkedIn">
     </a>
 
 </div>
@@ -164,7 +164,7 @@ Additionally, follow us on social media to stay updated on all our projects.</p>
 </div>
 <div class="empty-space">
 
-<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
 
 </div>
 
@@ -195,22 +195,22 @@ Additionally, follow us on social media to stay updated on all our projects.</p>
 				</script>
 				
 
-<script>
-    const icons = document.querySelectorAll('.social-icon');
-
-icons.forEach(icon => {
-  const originalSrc = icon.getAttribute('data-original-src'); // Obtém o src original do atributo data
-  const hoverSrc = icon.getAttribute('data-hover-src'); // Obtém o src para hover do atributo data
-
-  icon.addEventListener('mouseover', () => {
-    icon.src = hoverSrc;
-  });
-
-  icon.addEventListener('mouseout', () => {
-    icon.src = originalSrc;
-  });
-});
-</script>
+                <script>
+                    const icons = document.querySelectorAll('.social-icon-hover');
+                
+                icons.forEach(icon => {
+                  const originalSrc = icon.getAttribute('data-original-src'); // Obtém o src original do atributo data
+                  const hoverSrc = icon.getAttribute('data-hover-src'); // Obtém o src para hover do atributo data
+                
+                  icon.addEventListener('mouseover', () => {
+                    icon.src = hoverSrc;
+                  });
+                
+                  icon.addEventListener('mouseout', () => {
+                    icon.src = originalSrc;
+                  });
+                });
+                </script>
 
 <script>
     const header = document.querySelector('.header');
