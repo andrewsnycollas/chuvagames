@@ -196,6 +196,7 @@ footer p {
 }
 
 /* Team Section */
+
 .team {
     padding: 2em;
     background-color: #ffffff00;
@@ -204,17 +205,7 @@ footer p {
     align-items: center;
 }
 
-.team-member {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2em;
-    background-color: #ffffff;
-    padding: 1em;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+
 
 .contact{
     display: flex;
@@ -234,15 +225,18 @@ footer p {
 
 .team-member {
     display: flex;
-    align-items: center;
-    margin-bottom: 2em;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    margin: 25px ; /* 20px para cima e para baixo, 7px para os lados */
     background-color: #ffffff;
     padding: 1em;
     border-radius: 10px;
     width: 80%;
     max-width: 800px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  }
+
 .gif {
 
     width: 150px;
@@ -260,6 +254,9 @@ footer p {
 }
 
 .pixel-avatar {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
     width: 150px; /* Size of the pixel avatar */
     height: 150px;
     border-radius: 50%;
@@ -269,20 +266,28 @@ footer p {
 }
 
 .avatar-gif {
-	width: 150px;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 150px;
     height: 150px;
-	border-radius: 50%;
-	object-fit: cover;
-	cursor: pointer;
-	margin-right: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+   margin: 25px;
+  }
+
+.bio {
+    margin: 5px ;
+    max-width: 730px; /* Full width for the bio since only one image */
+    text-align: center;
+    margin-right: 20px;
     margin-left: 20px;
 }
-.bio {
-    max-width: 600px; /* Full width for the bio since only one image */
-}
+
 
 .bio h2 {
-    margin: 0;
+    margin: 25px ;
     font-size: 1.5em;
     color: #333;
 }
@@ -585,4 +590,32 @@ height: 100%;
     --bs-gradient: none;
   }
 
-  
+  .icon-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens "quebrem" para a próxima linha */
+    justify-content: center; 
+    
+    
+  }
+
+
+  .social-icon {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin: 10px 5px; /* 20px para cima e para baixo, 7px para os lados */
+    max-width: 730px;
+  }
+
+
+.social-icon:hover {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    /* Adicione aqui outros estilos para o hover, como bordas, sombras, etc. */
+}
+
+.empty-space {
+
+    row-gap: 200px;
+}
