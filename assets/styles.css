@@ -308,7 +308,7 @@ footer p {
     color: #525252;
     margin-right: 10px;
     margin-left: 10px;
-
+    text-align: left;
 }
 
 
@@ -653,8 +653,9 @@ height: 100%;
   
   .progress-fill {
     height: 100%;
-    background-color: #0BAFE6; /* Cor azul */
-    border-radius: 15px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #00BFFF, #0093c4, #00BFFF);
+    animation: colorChange 5s infinite alternate-reverse;
   }
   
   .progress-text {
@@ -664,4 +665,15 @@ height: 100%;
     transform: translate(-50%, -50%);
     color: #fff;
     font-weight: bold;
+  }
+
+  @keyframes colorChange {
+    0% {
+      background-size: 200% 100%;
+      background-position: 100% 0;
+    }
+    100% {
+      background-size: 200% 100%;
+      background-position: 0 0;
+    }
   }
