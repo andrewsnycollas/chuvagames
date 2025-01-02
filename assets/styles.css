@@ -643,7 +643,7 @@ height: 100%;
   }
   
   .progress-bar {
-    width: 90%; /* Ajuste a largura conforme necessário */
+    width: 100%; /* Ajuste a largura conforme necessário */
     height: 25px;
     background-color: #cecece; /* Cor de fundo cinza */
     border-radius: 10px;

@@ -45,12 +45,12 @@
     <div class="bio">
         <h2><b>TAG: Trials of the Arcane Grove</b></h2>
         <br>
-        <img src="/assets/images/featured-game.jpeg" alt="Epic Quest Game" class="game-image">
-<p><b>About This Game</b></p>
+        <img src="/assets/images/featured-game-tag.jpeg" alt="Epic Quest Game" class="game-image">
+<p style="text-align: center;"><b>About This Game</b></p>
    <p>Embark on a spellbinding adventure through the mysterious Arcane Grove.
     Begin your journey as a Magus trapped within a forgotten cave, your memory shrouded in mist. As you venture deeper, encounter enigmatic characters who hint at the Grove's ancient magic and its ability to alter minds. Harness the power of mana to cast a variety of spells, solve intricate puzzles, and defeat formidable foes. Uncover the secrets of the Grove and your own past, and restore balance to this enchanted land.
 </p>
-<p><b>Key Features</b></p>
+<p style="text-align: center;"><b>Key Features</b></p>
     <p>Master the Art of Spellcasting: Combine elements to create a wide range of spells and discover unique magical abilities.
     Explore a Dangerous World: Navigate through treacherous landscapes, solve puzzles, and uncover hidden secrets.
     Conquer Powerful Foes: Face off against challenging enemies and bosses, using your spellcasting skills to emerge victorious.
@@ -59,10 +59,20 @@
     
     Whether you're a fan of classic action-adventure games or seeking a fresh and challenging experience, Trials of The Arcane Grove offers a thrilling journey filled with magic, mystery, and adventure.</p>
 </p>
-<a class="btn btn-outline-steam" href="https://store.steampowered.com/" target="_blank" role="button"><i class="fa-brands fa-steam"></i> <b>Steam</b></a>                 
-<a class="btn btn-outline-light" href="https://chuva-games.itch.io/" target="_blank" role="button"><i class="fa-brands fa-itch-io"></i> <b>Itch.io</b></a>          
+    
 <!-- Skill Bars Section -->
-    </div>
+<div class="icon-container">
+    <br>
+     <a href="https://store.steampowered.com/" target="_blank">
+        <img src="assets/images/icons/default/default_steam.png" data-original-src="assets/images/icons/default/default_steam.png" data-hover-src="assets/images/icons/hover/hover_steam.png" class="social-icon social-icon-hover" alt="Steam">
+    </a>
+
+    <a href="https://chuva-games.itch.io/" target="_blank">
+        <img src="assets/images/icons/default/default_itchio.png" data-original-src="assets/images/icons/default/default_itchio.png" data-hover-src="assets/images/icons/hover/hover_itchio.png" class="social-icon social-icon-hover" alt="Itch.io">
+    </a>
+</div>    
+
+</div>
 </div>
 </div>
 </div> 
@@ -98,7 +108,7 @@
     let prevScrollpos = window.pageYOffset;
     
     window.onscroll = function() {
-      const currentScrollPos = window.pageYOffset; 
+      const currentScrollPos = window.pageYOffset;   
     
     
       if (prevScrollpos > currentScrollPos) {
@@ -107,10 +117,27 @@
         header.classList.add('hide');
       }
     
-      prevScrollpos = currentScrollPos;  
-     
+      prevScrollpos = currentScrollPos;   
+    
     };
     </script>
+
+<script>
+    const icons = document.querySelectorAll('.social-icon-hover');
+
+icons.forEach(icon => {
+  const originalSrc = icon.getAttribute('data-original-src'); // Obtém o src original do atributo data
+  const hoverSrc = icon.getAttribute('data-hover-src'); // Obtém o src para hover do atributo data
+
+  icon.addEventListener('mouseover', () => {
+    icon.src = hoverSrc;
+  });
+
+  icon.addEventListener('mouseout', () => {
+    icon.src = originalSrc;
+  });
+});
+</script>
 
 		</div>
 	</footer>
