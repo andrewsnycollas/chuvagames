@@ -1,11 +1,18 @@
 /* General Styles */
 body {
+    
     font-family: 'Open Sans', sans-serif;
+    background-image: url('assets/images/background.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #fff;
     background-color: #0BAFE6;
+
 }
 
 .header {
@@ -677,3 +684,11 @@ height: 100%;
       background-position: 0 0;
     }
   }
+
+.background-main {
+background-image: url('assets/images/bg.png');
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+background-attachment: fixed;
+}
