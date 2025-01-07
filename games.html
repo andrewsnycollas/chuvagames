@@ -35,10 +35,8 @@
     </div> -->
     <!-- Team Section -->
     <section class="team">
-        <br><br><br><br><br><br>
 		<h1><b>Games</b></h1>
 
-<br>
 <!-- Team Member 1 -->
 <div class="contact">
             
@@ -126,14 +124,22 @@
     const icons = document.querySelectorAll('.social-icon-hover');
 
 icons.forEach(icon => {
-  const originalSrc = icon.getAttribute('data-original-src'); // Obtém o src original do atributo data
-  const hoverSrc = icon.getAttribute('data-hover-src'); // Obtém o src para hover do atributo data
+  const originalSrc = icon.getAttribute('data-original-src');
+  const hoverSrc = icon.getAttribute('data-hover-src');
 
   icon.addEventListener('mouseover', () => {
     icon.src = hoverSrc;
   });
 
   icon.addEventListener('mouseout', () => {
+    icon.src = originalSrc;
+  });
+
+  icon.addEventListener('touchstart', () => {
+    icon.src = hoverSrc;
+  });
+
+  icon.addEventListener('touchend', () => {
     icon.src = originalSrc;
   });
 });
