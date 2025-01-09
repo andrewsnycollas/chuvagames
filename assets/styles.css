@@ -96,6 +96,7 @@ nav ul li a {
 }
 
 .hero-logo {
+    max-width: 100%;
     width: 400px;  /* Adjust the size of the logo */
     height: auto;  /* Maintain the aspect ratio */
     margin-bottom: 1em; /* Space between the logo and the text */
