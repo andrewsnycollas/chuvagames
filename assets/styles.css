@@ -20,7 +20,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    
     transition: top 0.3s ease-in-out; /* Adiciona uma transição suave */
     z-index: 999;
   }
@@ -30,38 +30,52 @@ body {
   }
 
 /* Navbar */
+
+
+
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* This centers items horizontally */
     align-items: center;  /* Ensures all items are vertically centered */
-    padding: 1em;
-    background-color: #333333;
+    padding: 0em;
+    border-radius: 20px;
+    background-color: #1d1d1db0;
+    max-width: 400px;
+    margin-top: 1em;
+    margin: 0 auto;
+    margin-top: 1em;
 }
 
 nav .logo {
     display: flex;
     align-items: center;  /* Centers the logo image and text vertically */
-    font-size: 1.5em;
+    font-size: 1em;
     color: #fff;
 }
 
 nav .logo-img {
-    width: 64px;  /* Adjust this to the desired width */
+    width: 1px;  /* Adjust this to the desired width */
     height: auto; /* Automatically adjusts height to maintain aspect ratio */
-    margin-right: 10px; /* Space between logo and text */
     
 }
 
 nav ul {
+    align-items: center;
     list-style: none;
     display: flex;
-    gap: 1em;
+    
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-left: 0px;
+    text-align: center;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1em;
+    text-align: center;
+    
 }
 
 .navselect {
@@ -188,10 +202,15 @@ nav ul li a {
 }
 
 footer {
-    background-color: #333333;
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1d1d1db0;
     text-align: center;
     padding: 1em;
-}
+    width: 100%; /* Garante que ocupe toda a largura da tela */
+  }
 
 footer p {
     margin: 0;
@@ -205,7 +224,7 @@ footer p {
 /* Team Section */
 
 .team {
-    padding: 2em;
+    padding: 1em;
     background-color: #ffffff00;
     display: flex;
     flex-direction: column;
@@ -214,22 +233,22 @@ footer p {
 
 .team h1 {
     margin-bottom: 50px;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
-.contact{
+.contact {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3em;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center; /* Centraliza os itens horizontalmente */
     margin: 25px ; /* 20px para cima e para baixo, 7px para os lados */
     background-color: #ffffff;
     padding: 1em;
     border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
+    width: 90;
+    max-width: 900px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    margin-bottom: 3em;
     
 }
 
@@ -239,12 +258,12 @@ footer p {
     flex-direction: column; /* Empilha os elementos verticalmente */
     align-items: center; /* Centraliza os itens verticalmente */
     justify-content: center; /* Centraliza os itens horizontalmente */
-    margin: 25px ; /* 20px para cima e para baixo, 7px para os lados */
+    margin: 15px ; /* 20px para cima e para baixo, 7px para os lados */
     background-color: #ffffff;
     padding: 1em;
     border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
+    width: 90;
+    max-width: 900px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 3em;
   }
@@ -293,8 +312,8 @@ footer p {
     margin: 5px ;
     max-width: 730px; /* Full width for the bio since only one image */
     text-align: center;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 
@@ -367,7 +386,7 @@ footer p {
     nav ul {
         flex-direction: column;
         text-align: center;
-        gap: 0.5em;
+        
     }
 
     .hero-content h1 {
