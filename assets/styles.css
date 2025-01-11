@@ -92,7 +92,7 @@ nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 100px;
 }
 
@@ -126,9 +126,17 @@ nav ul li a {
     gap: 1em;  /* Adds space between the two buttons */
 }
 
+.button-container {
+    display: flex;
+    justify-content: center; /* Distribute buttons evenly */
+    flex-wrap: wrap; /* Allow buttons to wrap to new lines */
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
 .btn2 {
     display: inline-block;
-    padding: 0.75em 1.5em;
+    padding: 0.75em 0.30em;
     background-color: #F27961;
     color: #fff;
     text-decoration: none;
@@ -136,11 +144,21 @@ nav ul li a {
     border-radius: 5px;
     margin-top: 1em;
     transition: background-color 0.3s ease;
+    width: 35%; /* Adjust width for two buttons per line */
+  margin: 10px; /* Add spacing between buttons */
+  max-width: 300px;
 }
 
 .btn2:hover {
     background-color: #d0454f;  /* Darkens the button on hover */
 }
+
+@media (max-width: 500px) {
+    /* Optional: Adjust styles for smaller screens */
+    .btn2 {
+      width: 100%; /* Make buttons full width on small screens */
+    }
+  }
 
 .btn-primary {
   --bs-btn-color: #fff;
