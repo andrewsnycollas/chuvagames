@@ -1,19 +1,33 @@
 /* General Styles */
 body {
-    
-    font-family: 'Open Sans', sans-serif;
-    background-image: url('/assets/images/bg-site.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #fff;
-    background-color: #0BAFE6;
-
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('/assets/images/bg-site.jpg'); 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
 }
+
+.character-layer {
+  position: fixed; /* Importante para fixar a camada */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/bg-site-character.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none; /* Torna a camada "invisível" para interações */
+  z-index: -1; 
+}
+
+
 
 .header {
     position: fixed;
@@ -75,7 +89,7 @@ nav ul li a {
     text-decoration: none;
     font-size: 1em;
     text-align: center;
-    
+    margin: 5px;
 }
 
 .navselect {
@@ -86,53 +100,68 @@ nav ul li a {
 
 
 /* Hero Section */
+
+.hero-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);  
+  margin: 50px auto; /* Ajuste conforme necessário */
+}
+
 .hero {
-    height: 100vh;
-    background-color: #00000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Permite que a hero ocupe todo o espaço disponível */
 }
 
 .hero-logo {
-    max-width: 100%;
-    width: 400px;  /* Adjust the size of the logo */
-    height: auto;  /* Maintain the aspect ratio */
-    margin-bottom: 1em; /* Space between the logo and the text */
-    margin-top: 15%;
-    
+  max-width: 100%;
+  width: 400px; 
+  height: auto; 
+  margin-bottom: 20px; 
+  margin-top: 10px;
 }
 
 .hero-content {
-    text-align: center;
-    margin-bottom: 9%;
+  text-align: center;
 }
 
 .hero-content h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
+  font-size: 3em;
 }
 
 .hero-content p {
-    font-size: 1.5em;
-    margin-top: 2%;
+  font-size: 1.5em;
+  margin-bottom: 15%;
 }
 
 .hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1em;  /* Adds space between the two buttons */
+  display: flex;
+  justify-content: center;
+  gap: 1em; 
 }
 
 .button-container {
-    display: flex;
-    justify-content: center; /* Distribute buttons evenly */
-    flex-wrap: wrap; /* Allow buttons to wrap to new lines */
-    margin-top: 25px;
-    margin-bottom: 25px;
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 200px) {
+  .hero-logo {
+    width: 80%; /* Reduz o tamanho da logo em telas menores */
   }
+  .hero-content h1 {
+    font-size: 2em; /* Reduz o tamanho do texto em telas menores */
+  }
+  .hero-content p {
+    font-size: 1.2em;
+  }
+}
 
 .btn2 {
     display: inline-block;
@@ -252,8 +281,8 @@ footer p {
 }
 
 .team h1 {
-    margin-bottom: 50px;
-    margin-top: 150px;
+    
+    margin-top: 2%;
 }
 
 .contact {
@@ -262,7 +291,7 @@ footer p {
     align-items: center; /* Centraliza os itens verticalmente */
     justify-content: center; /* Centraliza os itens horizontalmente */
     margin: 25px ; /* 20px para cima e para baixo, 7px para os lados */
-    background-color: #ffffff;
+    background-color: #00000042;
     padding: 1em;
     border-radius: 10px;
     width: 90;
@@ -285,7 +314,7 @@ footer p {
     width: 90;
     max-width: 900px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 3em;
+    
   }
 
 .gif {
@@ -340,23 +369,23 @@ footer p {
 .bio h2 {
     margin: 25px ;
     font-size: 1.5em;
-    color: #333;
+    color: #000000;
 }
 
 .bio h3 {
     margin: 0;
     font-size: 1.0em;
-    color: #333;
+    color: #000000;
 }
 
 .bio h2 {
     margin: 0;
     font-size: 1.5em;
-    color: #333;
+    color: #000000;
 }
 
 .bio p {
-    color: #525252;
+    color: #000000;
     margin-right: 10px;
     margin-left: 10px;
     text-align: justify;
@@ -736,3 +765,15 @@ background-position: center;
 background-size: cover;
 background-attachment: fixed;
 }
+
+.empty-space {
+
+margin-top: 60px;
+
+}
+
+.empty-space2 {
+
+  margin-top: 50%;
+  
+  }
