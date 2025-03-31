@@ -111,6 +111,11 @@ nav ul li a {
     font-size: large;
 }
 
+.langselect {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: small;
+}
 
 /* Hero Section */
 

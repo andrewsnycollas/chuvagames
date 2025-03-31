@@ -71,6 +71,20 @@
                     });
                 });
             </script>
+            <script>
+                function redirecionarPorIdioma() {
+                  var idiomaNavegador = navigator.language || navigator.userLanguage; // Obtém o idioma do navegador
+                  idiomaNavegador = idiomaNavegador.toLowerCase(); // Converte para minúsculas para comparação
+              
+                  if (idiomaNavegador.startsWith('pt-br')) {
+                    window.location.href = '/pt-br/index.html'; // Redireciona para português brasileiro
+                  } else {
+                    window.location.href = '/eng/index.html'; // Redireciona para inglês (padrão)
+                  }
+                }
+              
+                redirecionarPorIdioma(); // Chama a função no carregamento da página
+              </script>
     </div>
 </footer>
 <script>
