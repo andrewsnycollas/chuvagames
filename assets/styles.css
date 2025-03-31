@@ -12,19 +12,32 @@ body {
   color: #fff;
 }
 
-.character-layer {
-  position: fixed; /* Importante para fixar a camada */
+.character-layer-fixed {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/images/bg-site-character.png');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url('/assets/images/bg-site-character2.png');
   background-size: cover;
-  pointer-events: none; /* Torna a camada "invisível" para interações */
-  z-index: -1; 
+  background-position: center;
+  pointer-events: none;
+  z-index: -1;
+  
+}
+.character-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/bg-site-smoke.png');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  z-index: -1;
+  transform: translate(0, 0);
+  
 }
 
 
