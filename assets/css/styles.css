@@ -47,10 +47,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    
-    transition: top 0.3s ease-in-out; /* Adiciona uma transição suave */
+    transition: top 0.3s ease-in-out;
     z-index: 999;
-  }
+    overflow: hidden; /* Adicione esta linha */
+}
   
   .hide {
     top: -150px; /* Esconde a header fora da viewport */
@@ -96,7 +96,6 @@ nav ul {
     margin-left: 0px;
     text-align: center;
 }
-
 nav ul li a {
     color: #fff;
     text-decoration: none;

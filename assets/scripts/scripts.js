@@ -50,7 +50,7 @@
 (function() {
   const games = {
     amazon: {
-      title: "Amazon Grove",
+      title: "The Amazon Grove",
       img: "/assets/images/games/amazongrove.jpg",
       desc: "Coming soon."
     },
