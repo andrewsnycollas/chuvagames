@@ -44,7 +44,6 @@
   });
 })();
 
-// ...existing code...
 
 // Games Modal Interativo
 (function() {
@@ -107,7 +106,7 @@
   }
 })();
 
-// ...existing code...
+
 
 // Dados dos membros da equipe
 const teamMembers = [
