@@ -836,13 +836,15 @@ margin-top: 60px;
   overflow: hidden;
 }
 .game-thumb {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #2196f3;
-  background: #fff;
+    width: 180px;  /* Aproximadamente 200px, mas ligeiramente menor que a box */
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid #2196f3;
+    background: #fff;
+    transition: transform 0.2s;
 }
+
 .game-title {
   font-weight: 700;
   color: #2196f3;
@@ -897,14 +899,27 @@ margin-top: 60px;
 .game-modal .modal-close:hover {
   color: #d0454f;
 }
+
 .game-modal-img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 1rem;
-  margin-bottom: 1.2rem;
-  object-fit: cover;
-  box-shadow: 0 2px 12px rgba(33,150,243,0.10);
+    width: 100%;
+    max-width: 350px;
+    border-radius: 1rem;
+    margin-bottom: 1.2rem;
+    object-fit: cover;
+    box-shadow: 0 2px 12px rgba(33,150,243,0.10);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
+
+.game-modal-img.zoom {
+    transform: scale(1.5);
+    max-width: 100vw; /* Impede que ultrapasse a largura da tela */
+    max-height: 100vh; /* Evita que ultrapasse a altura da tela */
+}
+
+
+
+
 .game-modal-title {
   font-size: 1.3rem;
   font-weight: 700;
@@ -1000,31 +1015,38 @@ footer {
 }
 
 .cloud-shape {
-  width: 110px;
-  height: 110px;
-  background: #e3f2fd;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 8px rgba(33,150,243,0.10);
-  overflow: hidden;
+    width: 200px; /* Aumentado para acomodar a thumb */
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #e3f2fd;
+    box-shadow: 0 2px 8px rgba(33,150,243,0.10);
+    overflow: hidden; /* Garante que nada ultrapasse */
+    padding: 10px; /* Ajusta o espaçamento interno */
 }
 
+
 .game-thumb {
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 2px solid #2196f3;
-  background: #fff;
+    width: 110%; /* Mantém a proporção correta */
+    max-width: 210px; /* Ajusta o tamanho */
+    height: auto;
+    border-radius: 16px; /* Arredonda os cantos para acompanhar o cloud-shape */
+    object-fit: cover;
+    border: 3px solid #2196f3; /* Borda azul */
+    background: #fff;
+    padding: 0px;
+    box-shadow: 0 4px 8px rgba(33,150,243,0.15);
+    transition: transform 0.2s ease-in-out;
 }
+
+
 
 .game-title {
   font-weight: 700;
   color: #2196f3;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   text-align: center;
   margin-top: 0.5rem;
   min-height: 2.5em; /* Garante altura igual para todos */
@@ -1303,4 +1325,85 @@ footer {
     width: 600px;
     max-width: 90vw;
   }
+}
+
+.image-modal-bg {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 3000;
+    overflow: hidden;
+}
+
+.image-modal {
+    position: relative;
+    background: transparent;
+    padding: 20px;
+}
+
+#imageModalImg {
+    max-width: none; /* Exibir na resolução original */
+    height: auto;
+    cursor: grab; /* Indica que é possível arrastar */
+    position: absolute; /* Permite movimentação */
+}
+
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+@media (min-width: 768px) {
+    .game-modal {
+        width: 70vw; /* Ocupa 80% da largura da tela */
+        max-width: 600px; /* Define um limite máximo */
+        height: 80vh; /* Ocupa 80% da altura */
+        max-height: 850px; /* Limite máximo */
+        padding: 2rem;
+    }
+
+    .game-modal-img {
+        max-width: 250px; /* Define um tamanho menor para desktops */
+        max-height: 250px;
+
+
+    .game-modal-title {
+        font-size: 2rem; /* Texto maior */
+    }
+
+    .game-modal-desc {
+        font-size: 1.3rem;
+    }
+}
+
+.game-modal-img {
+    width: auto; /* Mantém tamanho original */
+    height: auto; /* Mantém altura proporcional */
+    max-width: 60%; /* Limita para não ultrapassar o modal */
+    max-height: 90vh; /* Mantém proporção dentro da tela */
+    aspect-ratio: 1 / 1; /* Garante formato quadrado */
+    border-radius: 12px;
+    object-fit: contain; /* Garante que a imagem não será cortada */
+    box-shadow: 0 4px 8px rgba(33,150,243,0.15);
+}
+
+.game-modal-img.zoom {
+    transform: scale(1.1); /* Reduzindo a escala para um zoom mais confortável */
+    max-width: 90vw; /* Limite de largura */
+    max-height: 85vh; /* Impede que ultrapasse a tela */
+    object-fit: contain;
 }

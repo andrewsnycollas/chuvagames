@@ -70,6 +70,8 @@
     }
   };
 
+
+  
   const modalBg = document.getElementById('gameModalBg');
   const modal = document.getElementById('gameModal');
   const modalImg = document.getElementById('modalImg');
@@ -105,6 +107,8 @@
     });
   }
 })();
+
+
 
 
 
@@ -396,4 +400,120 @@ document.addEventListener('mouseout', function(e) {
     e.target.style.transform = '';
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modalImg = document.getElementById('modalImg');
+    const modalBg = document.getElementById('gameModalBg');
+    const modalClose = document.getElementById('modalClose');
+
+    let isDragging = false;
+    let startX, startY, imgX = 0, imgY = 0;
+
+    // Alterna entre zoom ativado/desativado ao clicar
+    modalImg.addEventListener('click', function() {
+        if (modalImg.classList.contains('zoom')) {
+            modalImg.classList.remove('zoom'); 
+            modalImg.style.transform = "translate(0, 0) scale(1)";
+        } else {
+            modalImg.classList.add('zoom'); 
+            modalImg.style.transform = "scale(2)";
+        }
+    });
+
+    // Eventos para arrastar em Desktop (Mouse)
+    modalImg.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX - imgX;
+        startY = e.clientY - imgY;
+        modalImg.style.cursor = "grabbing";
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            imgX = e.clientX - startX;
+            imgY = e.clientY - startY;
+            modalImg.style.transform = `translate(${imgX}px, ${imgY}px) scale(2)`;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        modalImg.style.cursor = "grab";
+    });
+
+    // Eventos para arrastar em **Dispositivos Móveis**
+    modalImg.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        let touch = e.touches[0]; // Obtém o primeiro toque
+        startX = touch.clientX - imgX;
+        startY = touch.clientY - imgY;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        if (isDragging) {
+            let touch = e.touches[0];
+            imgX = touch.clientX - startX;
+            imgY = touch.clientY - startY;
+            modalImg.style.transform = `translate(${imgX}px, ${imgY}px) scale(2)`;
+        }
+    });
+
+    document.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+
+    // Fecha o modal e reseta a posição da imagem
+    function closeModal() {
+        modalBg.classList.remove('active');
+        modalImg.classList.remove('zoom'); 
+        modalImg.style.transform = "translate(0, 0) scale(1)";
+        document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalBg.addEventListener('click', (e) => {
+        if (e.target === modalBg) closeModal();
+    });
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") closeModal();
+    });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('gameModal');
+
+    function ajustarModal() {
+        if (window.innerWidth >= 768) {
+            modal.style.width = "80vw";
+            modal.style.maxWidth = "1000px";
+            modal.style.height = "80vh";
+            modal.style.maxHeight = "850px";
+        } else {
+            modal.style.width = "95vw";
+            modal.style.height = "auto";
+        }
+    }
+
+    window.addEventListener('resize', ajustarModal);
+    ajustarModal(); // Aplica na abertura do site
+});
+
+
+
+
+
+
 
