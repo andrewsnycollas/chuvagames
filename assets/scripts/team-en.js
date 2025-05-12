@@ -1,3 +1,9 @@
+/**
+ * CHUVA Games - Team Page JavaScript
+ * Handles team member cards and modals
+ */
+
+// Team members data
 const teamMembersEn = [
   {
     name: "Andrews Nycollas",
@@ -157,73 +163,109 @@ const teamMembersEn = [
   }
 ];
 
-// Shuffle array (Fisher-Yates)
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
+// Utility function to safely get DOM elements
+function $(selector) {
+  return document.querySelector(selector);
 }
 
+function $$(selector) {
+  return document.querySelectorAll(selector);
+}
+
+// Fisher-Yates shuffle algorithm
+function shuffleArray(array) {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
+
+// Execute when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initTeamCards();
+  initTeamModal();
+  initSocialIconsHover();
+  initCopyEmail();
+  initNavbarScroll();
+});
+
 // Render team cards
-(function() {
-  const grid = document.getElementById('teamCardsGridEn');
+function initTeamCards() {
+  const grid = $('#teamCardsGridEn');
   if (!grid) return;
-  window._shuffledTeamEn = [...teamMembersEn];
-  shuffleArray(window._shuffledTeamEn);
-  grid.innerHTML = window._shuffledTeamEn.map((m, idx) => `
+  
+  // Shuffle and save the order for use in the modal
+  window._shuffledTeamEn = shuffleArray(teamMembersEn);
+  
+  grid.innerHTML = window._shuffledTeamEn.map((member, idx) => `
     <div class="team-card" data-idx="${idx}">
-      <img src="${m.thumb}" data-original-src="${m.thumb}" data-hover-src="${m.gif}" class="team-thumb" alt="${m.name}">
-      <div class="team-card-name">${m.name}</div>
-      <div class="team-card-role">${m.role}</div>
+      <img 
+        src="${member.thumb}" 
+        data-original-src="${member.thumb}" 
+        data-hover-src="${member.gif}" 
+        class="team-thumb" 
+        alt="${member.name}"
+        loading="lazy"
+      >
+      <div class="team-card-name">${member.name}</div>
+      <div class="team-card-role">${member.role}</div>
     </div>
   `).join('');
-})();
+  
+  // Add hover effect for team cards
+  $$('.team-thumb').forEach(thumb => {
+    thumb.addEventListener('mouseover', function() {
+      this.src = this.getAttribute('data-hover-src');
+      this.classList.add('hovered');
+    });
+    
+    thumb.addEventListener('mouseout', function() {
+      this.src = this.getAttribute('data-original-src');
+      this.classList.remove('hovered');
+    });
+  });
+}
 
-// Avatar hover on cards
-document.addEventListener('mouseover', function(e) {
-  if (e.target.classList.contains('team-thumb')) {
-    e.target.src = e.target.getAttribute('data-hover-src');
-    e.target.classList.add('hovered');
-  }
-});
-document.addEventListener('mouseout', function(e) {
-  if (e.target.classList.contains('team-thumb')) {
-    e.target.src = e.target.getAttribute('data-original-src');
-    e.target.classList.remove('hovered');
-  }
-});
-
-// Interactive modal
-(function() {
-  const grid = document.getElementById('teamCardsGridEn');
-  const modalBg = document.getElementById('teamModalBgEn');
-  const modal = document.getElementById('teamModalEn');
-  const modalImg = document.getElementById('teamModalImgEn');
-  const modalTitle = document.getElementById('teamModalTitleEn');
-  const modalRole = document.getElementById('teamModalRoleEn');
-  const modalDesc = document.getElementById('teamModalDescEn');
-  const modalSkills = document.getElementById('teamModalSkillsEn');
-  const modalSocial = document.getElementById('teamModalSocialEn');
-  const modalClose = document.getElementById('teamModalCloseEn');
-
-  if (!grid || !modalBg || !modal || !modalImg || !modalTitle || !modalRole || !modalDesc || !modalSkills || !modalSocial || !modalClose) return;
-
+// Initialize team member modal
+function initTeamModal() {
+  const grid = $('#teamCardsGridEn');
+  const modalBg = $('#teamModalBgEn');
+  const modal = $('#teamModalEn');
+  const modalImg = $('#teamModalImgEn');
+  const modalTitle = $('#teamModalTitleEn');
+  const modalRole = $('#teamModalRoleEn');
+  const modalDesc = $('#teamModalDescEn');
+  const modalSkills = $('#teamModalSkillsEn');
+  const modalSocial = $('#teamModalSocialEn');
+  const modalClose = $('#teamModalCloseEn');
+  
+  if (!grid || !modalBg || !modal || !modalImg || !modalTitle || 
+      !modalRole || !modalDesc || !modalSkills || !modalSocial || !modalClose) return;
+  
+  // Open modal when clicking on a team card
   grid.addEventListener('click', function(e) {
     const card = e.target.closest('.team-card');
     if (!card) return;
+    
     const idx = card.getAttribute('data-idx');
-    const m = window._shuffledTeamEn[idx];
-
-    // Fill modal
-    modalImg.src = m.thumb;
-    modalImg.setAttribute('data-original-src', m.thumb);
-    modalImg.setAttribute('data-hover-src', m.gif);
-    modalImg.alt = m.name;
-    modalTitle.textContent = m.name;
-    modalRole.textContent = m.role;
-    modalDesc.textContent = m.desc;
-    modalSkills.innerHTML = m.skills.map(skill => `
+    const member = window._shuffledTeamEn[idx];
+    
+    if (!member) return;
+    
+    // Fill modal with member data
+    modalImg.src = member.thumb;
+    modalImg.setAttribute('data-original-src', member.thumb);
+    modalImg.setAttribute('data-hover-src', member.gif);
+    modalImg.alt = member.name;
+    
+    modalTitle.textContent = member.name;
+    modalRole.textContent = member.role;
+    modalDesc.textContent = member.desc;
+    
+    // Render skills
+    modalSkills.innerHTML = member.skills.map(skill => `
       <div class="progress-bar-container">
         <div class="progress-bar">
           <div class="progress-fill" style="width: ${skill.value}%"></div>
@@ -231,64 +273,125 @@ document.addEventListener('mouseout', function(e) {
         </div>
       </div>
     `).join('');
-    modalSocial.innerHTML = m.social.map(s => `
-      <a href="${s.href}" target="_blank">
+    
+    // Render social links
+    modalSocial.innerHTML = member.social.map(s => `
+      <a href="${s.href}" target="_blank" rel="noopener noreferrer" aria-label="${s.alt}">
         <img 
           src="/assets/images/icons/default/${s.icon}" 
           data-original-src="/assets/images/icons/default/${s.icon}" 
           data-hover-src="/assets/images/icons/hover/${s.hover}" 
           alt="${s.alt}"
           class="social-icon-hover"
+          loading="lazy"
         >
       </a>
     `).join('');
+    
+    // Show modal
     modalBg.classList.add('active');
     document.body.style.overflow = 'hidden';
+    
+    // Add hover effect for modal image
+    modalImg.addEventListener('mouseover', function() {
+      this.src = this.getAttribute('data-hover-src');
+      this.classList.add('hovered');
+    });
+    
+    modalImg.addEventListener('mouseout', function() {
+      this.src = this.getAttribute('data-original-src');
+      this.classList.remove('hovered');
+    });
   });
-
-  modalImg.addEventListener('mouseover', function() {
-    modalImg.src = modalImg.getAttribute('data-hover-src');
-    modalImg.classList.add('hovered');
-  });
-  modalImg.addEventListener('mouseout', function() {
-    modalImg.src = modalImg.getAttribute('data-original-src');
-    modalImg.classList.remove('hovered');
-  });
-
+  
+  // Close modal functions
   function closeModal() {
     modalBg.classList.remove('active');
     document.body.style.overflow = '';
   }
+  
   modalClose.addEventListener('click', closeModal);
+  
   modalBg.addEventListener('click', (e) => {
     if (e.target === modalBg) closeModal();
   });
-  window.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") closeModal();
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
   });
-})();
+}
 
-// Social icon hover
-document.addEventListener('mouseover', function(e) {
-  if (e.target.classList.contains('social-icon-hover')) {
-    const hoverSrc = e.target.getAttribute('data-hover-src');
-    if (hoverSrc) e.target.src = hoverSrc;
-    e.target.style.transform = 'scale(1.15)';
-  }
-});
-document.addEventListener('mouseout', function(e) {
-  if (e.target.classList.contains('social-icon-hover')) {
-    const originalSrc = e.target.getAttribute('data-original-src');
-    if (originalSrc) e.target.src = originalSrc;
-    e.target.style.transform = '';
-  }
-});
+// Social icons hover effect
+function initSocialIconsHover() {
+  document.addEventListener('mouseover', function(e) {
+    if (e.target.classList.contains('social-icon-hover')) {
+      const hoverSrc = e.target.getAttribute('data-hover-src');
+      if (hoverSrc) e.target.src = hoverSrc;
+      e.target.style.transform = 'scale(1.15)';
+    }
+  });
+  
+  document.addEventListener('mouseout', function(e) {
+    if (e.target.classList.contains('social-icon-hover')) {
+      const originalSrc = e.target.getAttribute('data-original-src');
+      if (originalSrc) e.target.src = originalSrc;
+      e.target.style.transform = '';
+    }
+  });
+}
 
-// Navbar: esconde ao rolar para baixo, mostra ao rolar para cima
-(function() {
-  const header = document.querySelector('.header');
+// Copy email to clipboard
+function initCopyEmail() {
+  const copyBtn = $('#copy-email');
+  
+  if (!copyBtn) return;
+  
+  copyBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const email = 'andrewsnycollas@chuvagames.co';
+    
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        // Create and show a temporary tooltip
+        const tooltip = document.createElement('div');
+        tooltip.textContent = 'Email copied: ' + email;
+        tooltip.style.position = 'fixed';
+        tooltip.style.bottom = '20px';
+        tooltip.style.left = '50%';
+        tooltip.style.transform = 'translateX(-50%)';
+        tooltip.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        tooltip.style.color = '#fff';
+        tooltip.style.padding = '10px 15px';
+        tooltip.style.borderRadius = '5px';
+        tooltip.style.zIndex = '9999';
+        
+        document.body.appendChild(tooltip);
+        
+        // Remove tooltip after 3 seconds
+        setTimeout(() => {
+          tooltip.style.opacity = '0';
+          tooltip.style.transition = 'opacity 0.5s ease';
+          
+          setTimeout(() => {
+            document.body.removeChild(tooltip);
+          }, 500);
+        }, 3000);
+      })
+      .catch(err => {
+        console.error('Failed to copy email: ', err);
+        alert('Failed to copy email. Please try again.');
+      });
+  });
+}
+
+// Navbar scroll behavior
+function initNavbarScroll() {
+  const header = $('.header');
   if (!header) return;
+  
   let prevScrollpos = window.pageYOffset;
+  
   window.addEventListener('scroll', function() {
     const currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
@@ -298,34 +401,629 @@ document.addEventListener('mouseout', function(e) {
     }
     prevScrollpos = currentScrollPos;
   });
-})();
+}
 
-// Hover dos ícones sociais (troca imagem default/hover)
-(function() {
-  const icons = document.querySelectorAll('.social-icon-hover');
+
+
+
+
+
+
+
+
+
+/**
+ * CHUVA Games - Main JavaScript
+ * Handles navigation, animations, and interactive elements
+ */
+
+// Utility function to safely get DOM elements
+function $(selector) {
+  return document.querySelector(selector);
+}
+
+function $$(selector) {
+  return document.querySelectorAll(selector);
+}
+
+// Execute when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initNavbar();
+  initDropdowns();
+  initSocialIconsHover();
+  initCopyEmail();
+  initGameModals();
+  initImageZoom();
+});
+
+// Navbar: hide on scroll down, show on scroll up
+function initNavbar() {
+  const header = $('.header');
+  if (!header) return;
+  
+  let prevScrollpos = window.pageYOffset;
+  let scrollTimer;
+  
+  window.addEventListener('scroll', function() {
+    clearTimeout(scrollTimer);
+    
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      header.classList.remove('hide');
+    } else if (currentScrollPos > 100) { // Only hide after scrolling down a bit
+      header.classList.add('hide');
+    }
+    prevScrollpos = currentScrollPos;
+    
+    // Add a small delay to prevent the header from flickering
+    scrollTimer = setTimeout(() => {
+      if (currentScrollPos < 50) {
+        header.classList.remove('hide');
+      }
+    }, 150);
+  });
+}
+
+// Mobile menu and dropdown functionality
+function initDropdowns() {
+  // Mobile menu toggle
+  const mobileMenuToggle = $('.mobile-menu-toggle');
+  const navMenu = $('.nav-menu');
+  
+  if (mobileMenuToggle && navMenu) {
+    mobileMenuToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+      
+      // Toggle icon between hamburger and X
+      const icon = mobileMenuToggle.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+      }
+    });
+  }
+  
+  // Dropdown menus
+  const dropdowns = $$('.dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const toggleBtn = dropdown.querySelector('.dropdown-toggle');
+    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+    
+    if (toggleBtn && dropdownMenu) {
+      toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Close other dropdowns
+        dropdowns.forEach(d => {
+          if (d !== dropdown && d.classList.contains('active')) {
+            d.classList.remove('active');
+          }
+        });
+        
+        // Toggle current dropdown
+        dropdown.classList.toggle('active');
+      });
+    }
+  });
+  
+  // Close dropdowns and mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    // Close dropdowns
+    if (!e.target.closest('.dropdown')) {
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+    }
+    
+    // Close mobile menu
+    if (navMenu && navMenu.classList.contains('active') && 
+        !e.target.closest('.nav-menu') && 
+        !e.target.closest('.mobile-menu-toggle')) {
+      navMenu.classList.remove('active');
+      
+      // Reset hamburger icon
+      if (mobileMenuToggle) {
+        const icon = mobileMenuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      }
+    }
+  });
+  
+  // Close on ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      // Close dropdowns
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+      
+      // Close mobile menu
+      if (navMenu && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        
+        // Reset hamburger icon
+        if (mobileMenuToggle) {
+          const icon = mobileMenuToggle.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+          }
+        }
+      }
+    }
+  });
+}
+
+// Social icons hover effect
+function initSocialIconsHover() {
+  const icons = $$('.social-icon-hover');
+  
   icons.forEach(icon => {
     const originalSrc = icon.getAttribute('data-original-src');
     const hoverSrc = icon.getAttribute('data-hover-src');
+    
     if (!originalSrc || !hoverSrc) return;
-
-    icon.addEventListener('mouseover', () => { icon.src = hoverSrc; });
-    icon.addEventListener('mouseout', () => { icon.src = originalSrc; });
-    icon.addEventListener('touchstart', () => { icon.src = hoverSrc; });
-    icon.addEventListener('touchend', () => { icon.src = originalSrc; });
-  });
-})();
-
-// Copiar e-mail para área de transferência
-(function() {
-  const copyBtn = document.getElementById('copy-email');
-  if (!copyBtn) return;
-  copyBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    const email = 'andrewsnycollas@chuvagames.co';
-    navigator.clipboard.writeText(email).then(function() {
-      alert('Email copiado para a área de transferência: ' + email);
-    }, function(err) {
-      console.error('Não foi possível copiar o email: ', err);
+    
+    // Mouse events
+    icon.addEventListener('mouseover', () => {
+      icon.src = hoverSrc;
+      icon.style.transform = 'scale(1.15)';
+    });
+    
+    icon.addEventListener('mouseout', () => {
+      icon.src = originalSrc;
+      icon.style.transform = '';
+    });
+    
+    // Touch events for mobile
+    icon.addEventListener('touchstart', () => {
+      icon.src = hoverSrc;
+      icon.style.transform = 'scale(1.15)';
+    });
+    
+    icon.addEventListener('touchend', () => {
+      icon.src = originalSrc;
+      icon.style.transform = '';
     });
   });
-})();
+}
+
+// Copy email to clipboard
+function initCopyEmail() {
+  const copyBtn = $('#copy-email');
+  
+  if (!copyBtn) return;
+  
+  copyBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const email = 'andrewsnycollas@chuvagames.co';
+    
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        // Create and show a temporary tooltip
+        const tooltip = document.createElement('div');
+        tooltip.textContent = 'Email copied: ' + email;
+        tooltip.style.position = 'fixed';
+        tooltip.style.bottom = '20px';
+        tooltip.style.left = '50%';
+        tooltip.style.transform = 'translateX(-50%)';
+        tooltip.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        tooltip.style.color = '#fff';
+        tooltip.style.padding = '10px 15px';
+        tooltip.style.borderRadius = '5px';
+        tooltip.style.zIndex = '9999';
+        
+        document.body.appendChild(tooltip);
+        
+        // Remove tooltip after 3 seconds
+        setTimeout(() => {
+          tooltip.style.opacity = '0';
+          tooltip.style.transition = 'opacity 0.5s ease';
+          
+          setTimeout(() => {
+            document.body.removeChild(tooltip);
+          }, 500);
+        }, 3000);
+      })
+      .catch(err => {
+        console.error('Failed to copy email: ', err);
+        alert('Failed to copy email. Please try again.');
+      });
+  });
+}
+
+// Game modals
+function initGameModals() {
+  // Game data
+  const games = {
+    amazon: {
+      title: "The Amazon Grove",
+      img: "/assets/images/games/amazongrove.jpg",
+      desc: "Coming soon. An adventure through the mystical Amazon rainforest, where ancient spirits and modern threats collide in a story of preservation and discovery."
+    },
+    arcane: {
+      title: "Trials of the Arcane Grove",
+      img: "/assets/images/games/arcanegrove.jpg",
+      desc: "Coming soon. Embark on a magical journey through the Arcane Grove, solving puzzles and uncovering secrets in this enchanting adventure."
+    },
+    magicless: {
+      title: "Magicless Mage",
+      img: "/assets/images/games/magicless.jpg",
+      desc: "Coming soon. Follow the story of a mage who lost their magical abilities and must find new ways to navigate a world that expects the impossible."
+    },
+    silent: {
+      title: "The Legend of the Silent Knight",
+      img: "/assets/images/games/silentknight.jpg",
+      desc: "Coming soon. A tale of courage and sacrifice, where a knight who took a vow of silence must save a kingdom from darkness without uttering a single word."
+    }
+  };
+  
+  const modalBg = $('#gameModalBg');
+  const modal = $('#gameModal');
+  const modalImg = $('#modalImg');
+  const modalTitle = $('#modalTitle');
+  const modalDesc = $('#modalDesc');
+  const modalClose = $('#modalClose');
+  
+  if (!modalBg || !modal || !modalImg || !modalTitle || !modalDesc || !modalClose) return;
+  
+  // Open modal when clicking on a game card
+  $$('.game-cloud-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const key = card.getAttribute('data-game');
+      const game = games[key];
+      
+      if (!game) return;
+      
+      modalImg.src = game.img;
+      modalImg.alt = game.title;
+      modalTitle.textContent = game.title;
+      modalDesc.textContent = game.desc;
+      
+      modalBg.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  // Close modal functions
+  function closeModal() {
+    modalBg.classList.remove('active');
+    document.body.style.overflow = '';
+    
+    // Reset zoom
+    if (modalImg.classList.contains('zoom')) {
+      modalImg.classList.remove('zoom');
+      modalImg.style.transform = '';
+    }
+  }
+  
+  modalClose.addEventListener('click', closeModal);
+  
+  modalBg.addEventListener('click', (e) => {
+    if (e.target === modalBg) closeModal();
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+}
+
+// Image zoom functionality
+function initImageZoom() {
+  const modalImg = $('#modalImg');
+  
+  if (!modalImg) return;
+  
+  let isDragging = false;
+  let startX, startY, imgX = 0, imgY = 0;
+  
+  // Toggle zoom on click
+  modalImg.addEventListener('click', function(e) {
+    e.stopPropagation();
+    
+    if (modalImg.classList.contains('zoom')) {
+      modalImg.classList.remove('zoom');
+      modalImg.style.transform = '';
+      imgX = 0;
+      imgY = 0;
+    } else {
+      modalImg.classList.add('zoom');
+      modalImg.style.transform = 'scale(1.5)';
+    }
+  });
+  
+  // Drag functionality for zoomed images
+  modalImg.addEventListener('mousedown', (e) => {
+    if (!modalImg.classList.contains('zoom')) return;
+    
+    e.preventDefault();
+    isDragging = true;
+    startX = e.clientX - imgX;
+    startY = e.clientY - imgY;
+    modalImg.style.cursor = 'grabbing';
+  });
+  
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    
+    imgX = e.clientX - startX;
+    imgY = e.clientY - startY;
+    modalImg.style.transform = `translate(${imgX}px, ${imgY}px) scale(1.5)`;
+  });
+  
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    if (modalImg.classList.contains('zoom')) {
+      modalImg.style.cursor = 'grab';
+    }
+  });
+  
+  // Touch events for mobile
+  modalImg.addEventListener('touchstart', (e) => {
+    if (!modalImg.classList.contains('zoom')) return;
+    
+    isDragging = true;
+    const touch = e.touches[0];
+    startX = touch.clientX - imgX;
+    startY = touch.clientY - imgY;
+  });
+  
+  document.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    
+    const touch = e.touches[0];
+    imgX = touch.clientX - startX;
+    imgY = touch.clientY - startY;
+    modalImg.style.transform = `translate(${imgX}px, ${imgY}px) scale(1.5)`;
+  });
+  
+  document.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+}
+
+// Utility function to safely get DOM elements
+function $(selector) {
+  return document.querySelector(selector);
+}
+
+function $$(selector) {
+  return document.querySelectorAll(selector);
+}
+
+// Fisher-Yates shuffle algorithm
+function shuffleArray(array) {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
+
+// Execute when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  initTeamCards();
+  initTeamModal();
+  initSocialIconsHover();
+  initCopyEmail();
+  initNavbarScroll();
+});
+
+// Render team cards
+function initTeamCards() {
+  const grid = $('#teamCardsGridEn');
+  if (!grid) return;
+  
+  // Shuffle and save the order for use in the modal
+  window._shuffledTeamEn = shuffleArray(teamMembersEn);
+  
+  grid.innerHTML = window._shuffledTeamEn.map((member, idx) => `
+    <div class="team-card" data-idx="${idx}">
+      <img 
+        src="${member.thumb}" 
+        data-original-src="${member.thumb}" 
+        data-hover-src="${member.gif}" 
+        class="team-thumb" 
+        alt="${member.name}"
+        loading="lazy"
+      >
+      <div class="team-card-name">${member.name}</div>
+      <div class="team-card-role">${member.role}</div>
+    </div>
+  `).join('');
+  
+  // Add hover effect for team cards
+  $$('.team-thumb').forEach(thumb => {
+    thumb.addEventListener('mouseover', function() {
+      this.src = this.getAttribute('data-hover-src');
+      this.classList.add('hovered');
+    });
+    
+    thumb.addEventListener('mouseout', function() {
+      this.src = this.getAttribute('data-original-src');
+      this.classList.remove('hovered');
+    });
+  });
+}
+
+// Initialize team member modal
+function initTeamModal() {
+  const grid = $('#teamCardsGridEn');
+  const modalBg = $('#teamModalBgEn');
+  const modal = $('#teamModalEn');
+  const modalImg = $('#teamModalImgEn');
+  const modalTitle = $('#teamModalTitleEn');
+  const modalRole = $('#teamModalRoleEn');
+  const modalDesc = $('#teamModalDescEn');
+  const modalSkills = $('#teamModalSkillsEn');
+  const modalSocial = $('#teamModalSocialEn');
+  const modalClose = $('#teamModalCloseEn');
+  
+  if (!grid || !modalBg || !modal || !modalImg || !modalTitle || 
+      !modalRole || !modalDesc || !modalSkills || !modalSocial || !modalClose) return;
+  
+  // Open modal when clicking on a team card
+  grid.addEventListener('click', function(e) {
+    const card = e.target.closest('.team-card');
+    if (!card) return;
+    
+    const idx = card.getAttribute('data-idx');
+    const member = window._shuffledTeamEn[idx];
+    
+    if (!member) return;
+    
+    // Fill modal with member data
+    modalImg.src = member.thumb;
+    modalImg.setAttribute('data-original-src', member.thumb);
+    modalImg.setAttribute('data-hover-src', member.gif);
+    modalImg.alt = member.name;
+    
+    modalTitle.textContent = member.name;
+    modalRole.textContent = member.role;
+    modalDesc.textContent = member.desc;
+    
+    // Render skills
+    modalSkills.innerHTML = member.skills.map(skill => `
+      <div class="progress-bar-container">
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: ${skill.value}%"></div>
+          <span class="progress-text">${skill.name}</span>
+        </div>
+      </div>
+    `).join('');
+    
+    // Render social links
+    modalSocial.innerHTML = member.social.map(s => `
+      <a href="${s.href}" target="_blank" rel="noopener noreferrer" aria-label="${s.alt}">
+        <img 
+          src="/assets/images/icons/default/${s.icon}" 
+          data-original-src="/assets/images/icons/default/${s.icon}" 
+          data-hover-src="/assets/images/icons/hover/${s.hover}" 
+          alt="${s.alt}"
+          class="social-icon-hover"
+          loading="lazy"
+        >
+      </a>
+    `).join('');
+    
+    // Show modal
+    modalBg.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Add hover effect for modal image
+    modalImg.addEventListener('mouseover', function() {
+      this.src = this.getAttribute('data-hover-src');
+      this.classList.add('hovered');
+    });
+    
+    modalImg.addEventListener('mouseout', function() {
+      this.src = this.getAttribute('data-original-src');
+      this.classList.remove('hovered');
+    });
+  });
+  
+  // Close modal functions
+  function closeModal() {
+    modalBg.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  modalClose.addEventListener('click', closeModal);
+  
+  modalBg.addEventListener('click', (e) => {
+    if (e.target === modalBg) closeModal();
+  });
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+}
+
+// Social icons hover effect
+function initSocialIconsHover() {
+  document.addEventListener('mouseover', function(e) {
+    if (e.target.classList.contains('social-icon-hover')) {
+      const hoverSrc = e.target.getAttribute('data-hover-src');
+      if (hoverSrc) e.target.src = hoverSrc;
+      e.target.style.transform = 'scale(1.15)';
+    }
+  });
+  
+  document.addEventListener('mouseout', function(e) {
+    if (e.target.classList.contains('social-icon-hover')) {
+      const originalSrc = e.target.getAttribute('data-original-src');
+      if (originalSrc) e.target.src = originalSrc;
+      e.target.style.transform = '';
+    }
+  });
+}
+
+// Copy email to clipboard
+function initCopyEmail() {
+  const copyBtn = $('#copy-email');
+  
+  if (!copyBtn) return;
+  
+  copyBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const email = 'andrewsnycollas@chuvagames.co';
+    
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        // Create and show a temporary tooltip
+        const tooltip = document.createElement('div');
+        tooltip.textContent = 'Email copied: ' + email;
+        tooltip.style.position = 'fixed';
+        tooltip.style.bottom = '20px';
+        tooltip.style.left = '50%';
+        tooltip.style.transform = 'translateX(-50%)';
+        tooltip.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        tooltip.style.color = '#fff';
+        tooltip.style.padding = '10px 15px';
+        tooltip.style.borderRadius = '5px';
+        tooltip.style.zIndex = '9999';
+        
+        document.body.appendChild(tooltip);
+        
+        // Remove tooltip after 3 seconds
+        setTimeout(() => {
+          tooltip.style.opacity = '0';
+          tooltip.style.transition = 'opacity 0.5s ease';
+          
+          setTimeout(() => {
+            document.body.removeChild(tooltip);
+          }, 500);
+        }, 3000);
+      })
+      .catch(err => {
+        console.error('Failed to copy email: ', err);
+        alert('Failed to copy email. Please try again.');
+      });
+  });
+}
+
+// Navbar scroll behavior
+function initNavbarScroll() {
+  const header = $('.header');
+  if (!header) return;
+  
+  let prevScrollpos = window.pageYOffset;
+  
+  window.addEventListener('scroll', function() {
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      header.classList.remove('hide');
+    } else {
+      header.classList.add('hide');
+    }
+    prevScrollpos = currentScrollPos;
+  });
+}
