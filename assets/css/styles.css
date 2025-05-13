@@ -480,6 +480,7 @@ footer p {
   font-size: 0.9rem;
   text-align: center;
   font-weight: 600;
+  font-weight: bold;
 }
 
 /* Modal estilos */
@@ -780,12 +781,13 @@ footer p {
   align-items: center;
   justify-content: center;
   margin: 25px auto;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(102, 102, 102, 0.3);
   padding: 2em;
-  border-radius: 10px;
+  border-radius: 20px;
   max-width: 900px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 3em;
+  backdrop-filter: blur(10px);
 }
 
 .icon-container {
@@ -859,5 +861,63 @@ footer p {
 @media (min-width: 769px) {
   .logo-container {
     display: none;
+  }
+}
+
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.botao-rede {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.icone-rede {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.icone-rede-padrao {
+  opacity: 1;
+}
+
+.icone-rede-hover {
+  opacity: 0;
+}
+
+.botao-rede:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.botao-rede:hover .icone-rede-padrao {
+  opacity: 0;
+}
+
+.botao-rede:hover .icone-rede-hover {
+  opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .redes-sociais {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .redes-sociais {
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 }
