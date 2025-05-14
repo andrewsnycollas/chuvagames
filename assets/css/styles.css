@@ -68,6 +68,8 @@ body {
   transition: top var(--transition-speed) ease-in-out;
   z-index: 999;
   overflow: visible;
+  display: flex;
+  justify-content: center;
 }
 
 .hide {
@@ -79,31 +81,13 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5em 1em;
+  padding: 0.1em 1.1em;
   border-radius: 20px;
   background-color: rgba(23, 23, 23, 0.698);
   max-width: 800px;
   margin: 1em auto 0;
   position: relative;
   min-height: 60px; /* Ensure consistent height */
-}
-/* Logo Container */
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.nav-logo {
-  width: 30px;
-  height: 30px;
-  margin-right: 8px;
-}
-
-.nav-title {
-  color: var(--text-color);
-  font-weight: bold;
-  font-size: 1.1em;
-  white-space: nowrap;
 }
 
 /* Nav Menu */
@@ -114,15 +98,14 @@ nav {
   padding: 0;
   margin: 0;
   justify-content: center;
+  width: 100%;
+  gap: 20px; /* Equal spacing between items */
 }
 
 .nav-menu li {
   position: relative;
-  margin: 0 10px;
-}
-
-.nav-menu li:last-child {
-  margin-left: auto;
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu li a {
@@ -136,6 +119,11 @@ nav {
 
 .nav-menu li a:hover {
   color: var(--primary-color);
+}
+
+.nav-logo {
+  width: 35px; /* Increased logo size */
+  height: 35px; /* Increased logo size */
 }
 
 /* Mobile Menu Toggle */
@@ -240,16 +228,9 @@ nav {
 /* Mobile Styles */
 @media (max-width: 768px) {
   nav {
-    justify-content: center;
-    padding: 1.2em 1em;
+    justify-content: space-between;
+    padding: 0.1em 1em; /* Reduced height */
     max-width: 95%;
-  }
-  
-  .logo-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
   }
   
   .mobile-menu-toggle {
@@ -260,52 +241,45 @@ nav {
     transform: translateY(-50%);
   }
   
-.nav-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: rgba(21, 21, 21, 0.698); /* Cor preta transparente */
-  backdrop-filter: blur(3px); /* Efeito de blur */
-  flex-direction: column;
-  padding: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  border-radius: 20px 20px 20px 20px;
-  box-shadow: 0 8px 16px var(--shadow-color);
-}
+  .nav-menu {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+    transition: max-height 0.3s ease;
+    gap: 10px;
+  }
   
   .nav-menu.active {
     max-height: 500px;
-    padding: 1em 0;
-    border-radius: 20px 20px 20px 20px;
-  }
-  
-  .nav-menu li {
-    margin: 0;
-    width: 100%;
-    text-align: center;
+    padding: 0.5em 0;
   }
   
   .nav-menu li:last-child {
-    margin-left: 0;
+    margin-left: auto;
   }
   
   .nav-menu li a {
-    padding: 12px 15px;
+    padding: 8px 5px;
+    font-size: 0.9em;
   }
   
   .dropdown-menu {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    padding: 0;
-    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    width: auto;
+    min-width: 180px;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    padding: 5px 0;
+    background-color: var(--bg-transparent);
+    top: 100%;
+    left: 0;
   }
   
   .dropdown-menu li a {
-    padding-left: 30px;
+    padding: 8px 15px;
   }
 }
 
@@ -433,7 +407,7 @@ footer p {
 }
 
 .team-card {
-  background: rgba(255,255,255,0.92);
+  background: rgb(255, 255, 255);
   border-radius: 1.2rem;
   box-shadow: 0 4px 24px rgba(33,150,243,0.08);
   padding: 1.2rem;
@@ -443,6 +417,7 @@ footer p {
   cursor: pointer;
   transition: box-shadow 0.2s, transform 0.2s;
   height: 100%;
+  backdrop-filter: blur(3px); /* Efeito de blur */
 }
 
 .team-card:hover {
@@ -476,7 +451,7 @@ footer p {
 }
 
 .team-card-role {
-  color: #333;
+  color: #000000;
   font-size: 0.9rem;
   text-align: center;
   font-weight: 600;
@@ -853,14 +828,6 @@ footer p {
   .social-icon, .social-icon-hover {
     width: 40px;
     height: 40px;
-  }
-}
-
-
-/* Hide logo and title on desktop */
-@media (min-width: 769px) {
-  .logo-container {
-    display: none;
   }
 }
 
