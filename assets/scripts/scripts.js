@@ -1002,3 +1002,47 @@ document.addEventListener('mouseout', function(e) {
     e.target.style.transform = '';
   }
 });
+
+const gameContainer = document.querySelector('.game-container');
+const modal = document.querySelector('#modal-jogos');
+const modalImage = document.querySelector('.modal-image');
+const closeButton = document.querySelector('.close');
+
+gameContainer.addEventListener('click', () => {
+  modal.style.display = 'block';
+  const fullSrc = gameContainer.querySelector('.game').getAttribute('data-full-src');
+  modalImage.src = fullSrc;
+  const imageWidth = modalImage.width;
+  const imageHeight = modalImage.height;
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  if (imageWidth > screenWidth) {
+    modalImage.style.width = `${screenWidth}px`;
+    modalImage.style.height = `${(imageHeight / imageWidth) * screenWidth}px`;
+  } else if (imageHeight > screenHeight) {
+    modalImage.style.height = `${screenHeight}px`;
+    modalImage.style.width = `${(imageWidth / imageHeight) * screenHeight}px`;
+  }
+  // ajuste a posição do X para fechar
+  const modalContent = modal.querySelector('.modal-content');
+  const modalContentWidth = modalContent.offsetWidth;
+  const modalContentHeight = modalContent.offsetHeight;
+  if (modalContentWidth > modalContentHeight) {
+    closeButton.style.top = `${(modalContentHeight - 30) / 2}px`;
+    closeButton.style.right = '10px';
+  } else {
+    closeButton.style.top = '10px';
+    closeButton.style.right = `${(modalContentWidth - 30) / 2}px`;
+  }
+});
+
+closeButton.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// adicione esse evento para fechar o modal ao clicar fora da imagem ou dentro da imagem
+document.addEventListener('click', (e) => {
+  if (e.target === modal || e.target === modalImage) {
+    modal.style.display = 'none';
+  }
+});
