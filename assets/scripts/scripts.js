@@ -595,7 +595,7 @@ const teamMembersPt = [
   },
   {
     name: "Marcos Genú",
-    role: "Dirtor de Arte",
+    role: "Diretor de Arte",
     thumb: "/assets/images/team/marcos.png",
     gif: "/assets/images/team/marcos.gif",
     desc: `Marcos Genú trabalha desde 2012 com arte conceitual, animação 2D e criação de assets para jogos. Ele contribuiu para diversos projetos, incluindo Tap Tap Beer e jogos desenvolvidos para grandes empresas como VALE e o Governo do Pará. Seu trabalho também inclui jogos premiados internacionalmente, como Ghostein, que foi reconhecido na Game Jam+, e um projeto que garantiu o sexto lugar no BGJam global. "Oi, eu sou o Marcos."`,
