@@ -566,12 +566,12 @@ const teamMembersEn = [
   },
   {
     name: "ED",
-    role: "Developer",
+    role: "Foley Artist",
     thumb: "/assets/images/team/ed.png",
     gif: "/assets/images/team/ed.gif",
     desc: `Need a text.`,
     skills: [
-      { name: "Game Development", value: 100 }
+      { name: "Audio", value: 100 }
     ],
     social: [
       { href: "https://www.linkedin.com", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
@@ -742,12 +742,12 @@ const teamMembersPt = [
   },
   {
     name: "ED",
-    role: "Desenvovedor",
+    role: "Artista de Foley",
     thumb: "/assets/images/team/ed.png",
     gif: "/assets/images/team/ed.gif",
-    desc: `Ed é um desenvovedor que ainda não enviou o texto da biografia, mas assim que enviar o texto será exibido aqui. :)`,
+    desc: `Ed é um artista de foley que ainda não enviou o texto da biografia, mas assim que enviar o texto será exibido aqui. :)`,
     skills: [
-      { name: "Desenvolvimento de Jogos", value: 100 }
+      { name: "Audio", value: 100 }
     ],
     social: [
       { href: "https://www.linkedin.com", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
