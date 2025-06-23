@@ -549,18 +549,34 @@ const teamMembersEn = [
     ]
   },
   {
-    name: "Sara Amorim",
-    role: "Public Relations",
-    thumb: "/assets/images/team/sara.png",
-    gif: "/assets/images/team/sara.gif",
-    desc: `Sara Amorim is a skilled communicator, passionate about building bridges between developers and players. With a strong ability to listen and articulate, she will be the voice of CHUVA, connecting the development team with its audience.`,
+    name: "Miguel (Angel)",
+    role: "Young Apprentice",
+    thumb: "/assets/images/team/angel.png",
+    gif: "/assets/images/team/angel.gif",
+    desc: `Miguel, better known as Angel, has loved games since childhood. He has always been interested in game development, especially in how games can go beyond entertainment to convey emotions, knowledge, and unique challenges. Recently, he turned this passion into practice by improving his art and developing projects in GameMaker. He is constantly seeking to improve his skills and contribute to creating experiences that engage CHUVA's members.`,
     skills: [
-      { name: "Communication", value: 100 }
+      { name: "Game Maker Language (GML)", value: 60 },
+      { name: "Apprentice", value: 100 }
+    ],
+    social: [
+      { href: "https://www.linkedin.com/in/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
+      { href: "https://www.instagram.com/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://discordapp.com/users/979140949185822762", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
+    ]
+  },
+  {
+    name: "ED",
+    role: "Developer",
+    thumb: "/assets/images/team/ed.png",
+    gif: "/assets/images/team/ed.gif",
+    desc: `Need a text.`,
+    skills: [
+      { name: "Game Development", value: 100 }
     ],
     social: [
       { href: "https://www.linkedin.com", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
-      { href: "https://www.instagram.com/saramorimmm/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
-      { href: "https://discordapp.com/users/1324819249184637086", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
+      { href: "https://www.instagram.com/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://discordapp.com/users/1356290249990607128", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
     ]
   }
 ];
@@ -650,7 +666,7 @@ const teamMembersPt = [
   },
   {
     name: "André Borba",
-    role: "Produtor / Gerente de Comunidade / Designer de Som",
+    role: "Desenvolvedor Web / Produtor / Gerente de Comunidade / Designer de Som",
     thumb: "/assets/images/team/tuta.png",
     gif: "/assets/images/team/tuta.gif",
     desc: `André, conhecido como Tutankhamal, é apaixonado por tecnologia e música. Neurodivergente (autista e TDAH), ele tem experiência em desenvolvimento Front-end, gerenciamento de comunidade e suporte ao cliente. Um autodidata, ele transforma sua paixão por videogames e computadores em conhecimento técnico.`,
@@ -709,18 +725,34 @@ const teamMembersPt = [
     ]
   },
   {
-    name: "Sara Amorim",
-    role: "Relações Públicas",
-    thumb: "/assets/images/team/sara.png",
-    gif: "/assets/images/team/sara.gif",
-    desc: `Sara Amorim é uma comunicadora habilidosa, apaixonada por criar pontes entre desenvolvedores e jogadores. Com uma forte capacidade de ouvir e articular, ela será a voz da CHUVA, conectando a equipe de desenvolvimento com seu público.`,
+    name: "Miguel (Angel)",
+    role: "Menor Aprendiz",
+    thumb: "/assets/images/team/angel.png",
+    gif: "/assets/images/team/angel.gif",
+    desc: `Miguel, mais conhecido como Angel, adora  jogos desde pequeno, a área de desenvolvimento de jogos sempre lhe interessou, principalmente como os jogos podem ir além do entretenimento, passando emoções, conhecimento e desafios únicos. Recentemente ele transformou essa paixão em prática, melhorando suas artes e desenvolvendo alguns projetos no GameMaker. Ele busca sempre melhorar suas habilidades e contribuir para a criação de experiências que engajem os jogadores da CHUVA.`,
     skills: [
-      { name: "Comunicação", value: 100 }
+      { name: "Game Maker Language (GML)", value: 60 },
+      { name: "Aprendiz", value: 100 }
+    ],
+    social: [
+      { href: "https://www.linkedin.com/in/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
+      { href: "https://www.instagram.com/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://discordapp.com/users/979140949185822762", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
+    ]
+  },
+  {
+    name: "ED",
+    role: "Desenvovedor",
+    thumb: "/assets/images/team/ed.png",
+    gif: "/assets/images/team/ed.gif",
+    desc: `Ed é um desenvovedor que ainda não enviou o texto da biografia, mas assim que enviar o texto será exibido aqui. :)`,
+    skills: [
+      { name: "Desenvolvimento de Jogos", value: 100 }
     ],
     social: [
       { href: "https://www.linkedin.com", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
-      { href: "https://www.instagram.com/saramorimmm/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
-      { href: "https://discordapp.com/users/1324819249184637086", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
+      { href: "https://www.instagram.com/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://discordapp.com/users/1356290249990607128", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
     ]
   }
 ];

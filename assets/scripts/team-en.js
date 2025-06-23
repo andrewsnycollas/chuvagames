@@ -147,18 +147,33 @@ const teamMembersEn = [
     ]
   },
   {
-    name: "Sara Amorim",
-    role: "Public Relations",
-    thumb: "/assets/images/team/sara.png",
-    gif: "/assets/images/team/sara.gif",
-    desc: `Sara Amorim is a skilled communicator, passionate about building bridges between developers and players. With a strong ability to listen and articulate, she will be the voice of CHUVA, connecting the development team with its audience.`,
+    name: "Angel",
+    role: "Game Developer",
+    thumb: "/assets/images/team/angel.png",
+    gif: "/assets/images/team/angel.gif",
+    desc: `Need a text.`,
     skills: [
-      { name: "Communication", value: 100 }
+      { name: "Game Development", value: 100 }
+    ],
+    social: [
+      { href: "https://www.linkedin.com/in/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
+      { href: "https://www.instagram.com/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://discordapp.com/users/979140949185822762", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
+    ]
+  },
+  {
+    name: "ED",
+    role: "Developer",
+    thumb: "/assets/images/team/ed.png",
+    gif: "/assets/images/team/ed.gif",
+    desc: `Need a text.`,
+    skills: [
+      { name: "Game Development", value: 100 }
     ],
     social: [
       { href: "https://www.linkedin.com", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
-      { href: "https://www.instagram.com/saramorimmm/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
-      { href: "https://discordapp.com/users/1324819249184637086", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
+      { href: "https://www.instagram.com/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://discordapp.com/users/1356290249990607128", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
     ]
   }
 ];
