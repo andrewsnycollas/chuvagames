@@ -4,19 +4,131 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
+<!-- Main Pages -->
 <url>
   <loc>https://chuvagames.co/</loc>
-  <lastmod>2024-11-02T20:38:43+00:00</lastmod>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
   <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://chuvagames.co/team.html</loc>
-  <lastmod>2024-11-02T20:38:43+00:00</lastmod>
-  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
 </url>
 
+<!-- English Pages -->
+<url>
+  <loc>https://chuvagames.co/eng/</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.90</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/eng/games.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/eng/team.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/eng/contact.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.60</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Portuguese Pages -->
+<url>
+  <loc>https://chuvagames.co/pt-br/</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.90</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/pt-br/games.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/pt-br/team.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.70</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/pt-br/contact.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.60</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Game Pages -->
+<url>
+  <loc>https://chuvagames.co/eng/theamazongrove.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.75</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/eng/magiclessmage.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.75</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/eng/thelegendofthesilentknight.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.75</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/eng/trialsofthearcanegrove.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.75</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Portuguese Game Pages -->
+<url>
+  <loc>https://chuvagames.co/pt-br/theamazongrove.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.75</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/pt-br/magiclessmage.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.75</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/pt-br/thelegendofthesilentknight.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.75</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/pt-br/trialsofthearcanegrove.html</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.75</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Embedded Games -->
+<url>
+  <loc>https://chuvagames.co/Kuadrika/</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.65</priority>
+  <changefreq>yearly</changefreq>
+</url>
+<url>
+  <loc>https://chuvagames.co/orbit/</loc>
+  <lastmod>2025-01-02T12:00:00+00:00</lastmod>
+  <priority>0.65</priority>
+  <changefreq>yearly</changefreq>
+</url>
 
 </urlset>

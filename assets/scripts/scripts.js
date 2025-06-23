@@ -551,8 +551,8 @@ const teamMembersEn = [
   {
     name: "Miguel (Angel)",
     role: "Young Apprentice",
-    thumb: "/assets/images/team/angel.png",
-    gif: "/assets/images/team/angel.gif",
+    thumb: "assets/images/team/mohamed.png",
+    gif: "assets/images/team/mohamed.gif",
     desc: `Miguel, better known as Angel, has loved games since childhood. He has always been interested in game development, especially in how games can go beyond entertainment to convey emotions, knowledge, and unique challenges. Recently, he turned this passion into practice by improving his art and developing projects in GameMaker. He is constantly seeking to improve his skills and contribute to creating experiences that engage CHUVA's members.`,
     skills: [
       { name: "Game Maker Language (GML)", value: 60 },
@@ -567,8 +567,8 @@ const teamMembersEn = [
   {
     name: "ED",
     role: "Foley Artist",
-    thumb: "/assets/images/team/ed.png",
-    gif: "/assets/images/team/ed.gif",
+    thumb: "assets/images/team/mohamed.png",
+    gif: "assets/images/team/mohamed.gif",
     desc: `Need a text.`,
     skills: [
       { name: "Audio", value: 100 }
@@ -881,9 +881,9 @@ function initTeamModal() {
       modalSocial.innerHTML = member.social.map(s => `
         <a href="${s.href}" target="_blank" rel="noopener noreferrer" aria-label="${s.alt}">
           <img 
-            src="/assets/images/icons/default/${s.icon}" 
-            data-original-src="/assets/images/icons/default/${s.icon}" 
-            data-hover-src="/assets/images/icons/hover/${s.hover}" 
+            src="/assets/images/icons/default/${s.icon}"
+        data-original-src="/assets/images/icons/default/${s.icon}"
+        data-hover-src="/assets/images/icons/hover/${s.hover}" 
             alt="${s.alt}"
             class="social-icon-hover"
             loading="lazy"
@@ -974,9 +974,9 @@ function initTeamModal() {
       modalSocial.innerHTML = member.social.map(s => `
         <a href="${s.href}" target="_blank" rel="noopener noreferrer" aria-label="${s.alt}">
           <img 
-            src="/assets/images/icons/default/${s.icon}" 
-            data-original-src="/assets/images/icons/default/${s.icon}" 
-            data-hover-src="/assets/images/icons/hover/${s.hover}" 
+            src="/assets/images/icons/default/${s.icon}"
+        data-original-src="/assets/images/icons/default/${s.icon}"
+        data-hover-src="/assets/images/icons/hover/${s.hover}" 
             alt="${s.alt}"
             class="social-icon-hover"
             loading="lazy"
