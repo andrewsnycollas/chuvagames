@@ -490,7 +490,7 @@ const teamMembersEn = [
   },
   {
     name: "André Borba",
-    role: "Producer / Community Manager / Sound Designer",
+    role: "Web Developer / Producer / Community Manager / Sound Designer",
     thumb: "/assets/images/team/tuta.png",
     gif: "/assets/images/team/tuta.gif",
     desc: `André, known as Tutankhamal, is passionate about technology and music. Neurodivergent (autistic and ADHD), he has experience in Front-end development, community management, and customer support. A self-taught learner, he turns his passion for video games and computers into technical knowledge.`,
@@ -680,7 +680,7 @@ const teamMembersPt = [
     ],
     social: [
       { href: "https://www.linkedin.com/in/tutankhamal/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
-       { href: "https://github.com/Tutankhamal", icon: "default_github.png", hover: "hover_github.png", alt: "GitHub" },
+      { href: "https://github.com/Tutankhamal", icon: "default_github.png", hover: "hover_github.png", alt: "GitHub" },
       { href: "https://www.youtube.com/@tutankhamal", icon: "default_youtube.png", hover: "hover_youtube.png", alt: "YouTube" },
       { href: "https://www.twitch.tv/tutankhamal", icon: "default_twitch.png", hover: "hover_twitch.png", alt: "Twitch" },
       { href: "https://www.instagram.com/tutankhamal", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
