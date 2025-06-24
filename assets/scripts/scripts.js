@@ -501,6 +501,7 @@ const teamMembersEn = [
     ],
     social: [
       { href: "https://www.linkedin.com/in/tutankhamal/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
+      { href: "https://github.com/Tutankhamal", icon: "default_github.png", hover: "hover_github.png", alt: "GitHub" },
       { href: "https://www.youtube.com/@tutankhamal", icon: "default_youtube.png", hover: "hover_youtube.png", alt: "YouTube" },
       { href: "https://www.twitch.tv/tutankhamal", icon: "default_twitch.png", hover: "hover_twitch.png", alt: "Twitch" },
       { href: "https://www.instagram.com/tutankhamal", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
@@ -508,7 +509,6 @@ const teamMembersEn = [
       { href: "https://discordapp.com/users/820522746622246963", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" },
       { href: "https://steamcommunity.com/id/Tutankhamal/", icon: "default_steam.png", hover: "hover_steam.png", alt: "Steam" },
       { href: "https://x.com/Tutankhamal", icon: "default_x.png", hover: "hover_x.png", alt: "X" },
-      { href: "https://bsky.app/profile/tutankhamal.bsky.social", icon: "default_bsky.png", hover: "hover_bsky.png", alt: "Bluesky" },
       { href: "https://soundcloud.com/tutankhamal", icon: "default_soundcloud.png", hover: "hover_soundcloud.png", alt: "Soundcloud" }
     ]
   },
@@ -680,6 +680,7 @@ const teamMembersPt = [
     ],
     social: [
       { href: "https://www.linkedin.com/in/tutankhamal/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
+       { href: "https://github.com/Tutankhamal", icon: "default_github.png", hover: "hover_github.png", alt: "GitHub" },
       { href: "https://www.youtube.com/@tutankhamal", icon: "default_youtube.png", hover: "hover_youtube.png", alt: "YouTube" },
       { href: "https://www.twitch.tv/tutankhamal", icon: "default_twitch.png", hover: "hover_twitch.png", alt: "Twitch" },
       { href: "https://www.instagram.com/tutankhamal", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
@@ -687,7 +688,6 @@ const teamMembersPt = [
       { href: "https://discordapp.com/users/820522746622246963", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" },
       { href: "https://steamcommunity.com/id/Tutankhamal/", icon: "default_steam.png", hover: "hover_steam.png", alt: "Steam" },
       { href: "https://x.com/Tutankhamal", icon: "default_x.png", hover: "hover_x.png", alt: "X" },
-      { href: "https://bsky.app/profile/tutankhamal.bsky.social", icon: "default_bsky.png", hover: "hover_bsky.png", alt: "Bluesky" },
       { href: "https://soundcloud.com/tutankhamal", icon: "default_soundcloud.png", hover: "hover_soundcloud.png", alt: "Soundcloud" }
     ]
   },
