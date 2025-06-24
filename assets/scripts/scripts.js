@@ -559,8 +559,11 @@ const teamMembersEn = [
       { name: "Apprentice", value: 100 }
     ],
     social: [
-      { href: "https://www.linkedin.com/in/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
-      { href: "https://www.instagram.com/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://www.youtube.com/@AngelinoJollie", icon: "default_youtube.png", hover: "hover_youtube.png", alt: "YouTube" },
+      { href: "https://twitch.tv/paodeangel", icon: "default_twitch.png", hover: "hover_twitch.png", alt: "Twitch" },
+      { href: "https://www.instagram.com/angelinojollie/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://x.com/AngelinoJollie", icon: "default_x.png", hover: "hover_x.png", alt: "X" },
+      { href: "https://github.com/angelinojollie", icon: "default_github.png", hover: "hover_github.png", alt: "GitHub" },
       { href: "https://discordapp.com/users/979140949185822762", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
     ]
   },
@@ -735,8 +738,11 @@ const teamMembersPt = [
       { name: "Aprendiz", value: 100 }
     ],
     social: [
-      { href: "https://www.linkedin.com/in/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
-      { href: "https://www.instagram.com/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://www.youtube.com/@AngelinoJollie", icon: "default_youtube.png", hover: "hover_youtube.png", alt: "YouTube" },
+      { href: "https://twitch.tv/paodeangel", icon: "default_twitch.png", hover: "hover_twitch.png", alt: "Twitch" },
+      { href: "https://www.instagram.com/angelinojollie/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://x.com/AngelinoJollie", icon: "default_x.png", hover: "hover_x.png", alt: "X" },
+      { href: "https://github.com/angelinojollie", icon: "default_github.png", hover: "hover_github.png", alt: "GitHub" },
       { href: "https://discordapp.com/users/979140949185822762", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
     ]
   },
