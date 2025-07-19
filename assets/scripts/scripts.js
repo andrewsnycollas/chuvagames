@@ -500,6 +500,7 @@ const teamMembersEn = [
       { name: "Sound Designer", value: 50 }
     ],
     social: [
+      { href: "https://tutankhamal.com", icon: "default_site.png", hover: "hover_site.png", alt: "Portifolio" },
       { href: "https://www.linkedin.com/in/tutankhamal/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
       { href: "https://github.com/Tutankhamal", icon: "default_github.png", hover: "hover_github.png", alt: "GitHub" },
       { href: "https://www.youtube.com/@tutankhamal", icon: "default_youtube.png", hover: "hover_youtube.png", alt: "YouTube" },
@@ -567,18 +568,39 @@ const teamMembersEn = [
       { href: "https://discordapp.com/users/979140949185822762", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
     ]
   },
+    {
+    name: "Brendo Teles",
+    role: "2D / 3D / Animation Artist",
+    thumb: "/assets/images/team/brendo.png",
+    gif: "/assets/images/team/brendo.gif",
+    desc: `Digital artist focused on 3D modeling, concept art, illustration, and basic 2D/3D animation for digital games and graphic materials. Experienced in projects such as Matemagos, Holobeast Academy, Thunder Riders, and Amazon Quest, contributing to visual development and supporting the artistic consistency and creative direction of the productions. Passionate about storytelling through stylized and engaging visuals.`,
+    skills: [
+      { name: "Illustration / Concept Art", value: 90 },
+      { name: "3D Modeling", value: 80 },
+      { name: "2D Animation Frame-to-Frame", value: 60 },
+      { name: "3D Animation", value: 60 },
+      { name: "Video Editing", value: 50 },
+      { name: "UI/UX", value: 40 }
+    ],
+    social: [
+      { href: "https://www.artstation.com/teles_design", icon: "default_site.png", hover: "hover_site.png", alt: "Portifolio" },
+      { href: "https://www.linkedin.com/in/brendo-teles-082909127/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
+      { href: "https://www.instagram.com/shiro.aniclubchannel/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://wa.me/5592982351719", icon: "default_whats.png", hover: "hover_whats.png", alt: "WhatsApp" },
+      { href: "https://discordapp.com/users/246455690133110784", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
+    ]
+  },
   {
     name: "ED",
     role: "Foley Artist",
-    thumb: "assets/images/team/mohamed.png",
-    gif: "assets/images/team/mohamed.gif",
+    thumb: "assets/images/team/ed.png",
+    gif: "assets/images/team/ed.gif",
     desc: `Need a text.`,
     skills: [
       { name: "Audio", value: 100 }
     ],
     social: [
-      { href: "https://www.linkedin.com", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
-      { href: "https://www.instagram.com/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://www.instagram.com/edpaulocardoso", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
       { href: "https://discordapp.com/users/1356290249990607128", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
     ]
   }
@@ -679,6 +701,7 @@ const teamMembersPt = [
       { name: "Designer de Som", value: 50 }
     ],
     social: [
+      { href: "https://tutankhamal.com", icon: "default_site.png", hover: "hover_site.png", alt: "Portifolio" },
       { href: "https://www.linkedin.com/in/tutankhamal/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
       { href: "https://github.com/Tutankhamal", icon: "default_github.png", hover: "hover_github.png", alt: "GitHub" },
       { href: "https://www.youtube.com/@tutankhamal", icon: "default_youtube.png", hover: "hover_youtube.png", alt: "YouTube" },
@@ -747,6 +770,28 @@ const teamMembersPt = [
     ]
   },
   {
+    name: "Brendo Teles",
+    role: "Artista 2D / 3D e Animação",
+    thumb: "/assets/images/team/brendo.png",
+    gif: "/assets/images/team/brendo.gif",
+    desc: `Artista digital com foco em modelagem 3D, concept art, ilustração e animação básica 2D/3D para jogos digitais e materiais gráficos. Experiência em projetos como Matemagos, Holobeast Academy, Thunder Riders e Amazon Quest, atuando no desenvolvimento visual e contribuindo para a consistência artística e direcionamento criativo das produções. Apaixonado por contar histórias através de visuais estilizados e envolventes.`,
+    skills: [
+      { name: "Ilustração / Concept Art", value: 90 },
+      { name: "Modelagem 3D", value: 80 },
+      { name: "Animação 2D Frame-a-Frame", value: 60 },
+      { name: "Animação 3D", value: 60 },
+      { name: "Edição de Vídeo", value: 50 },
+      { name: "UI/UX", value: 40 }
+    ],
+    social: [
+      { href: "https://www.artstation.com/teles_design", icon: "default_site.png", hover: "hover_site.png", alt: "Portifolio" },
+      { href: "https://www.linkedin.com/in/brendo-teles-082909127/", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
+      { href: "https://www.instagram.com/shiro.aniclubchannel/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://wa.me/5592982351719", icon: "default_whats.png", hover: "hover_whats.png", alt: "WhatsApp" },
+      { href: "https://discordapp.com/users/246455690133110784", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
+    ]
+  },
+  {
     name: "ED",
     role: "Artista de Foley",
     thumb: "/assets/images/team/ed.png",
@@ -756,8 +801,7 @@ const teamMembersPt = [
       { name: "Audio", value: 100 }
     ],
     social: [
-      { href: "https://www.linkedin.com", icon: "default_linkedin.png", hover: "hover_linkedin.png", alt: "LinkedIn" },
-      { href: "https://www.instagram.com/", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
+      { href: "https://www.instagram.com/edpaulocardoso", icon: "default_insta.png", hover: "hover_insta.png", alt: "Instagram" },
       { href: "https://discordapp.com/users/1356290249990607128", icon: "default_discord.png", hover: "hover_discord.png", alt: "Discord" }
     ]
   }
