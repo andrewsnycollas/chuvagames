@@ -571,8 +571,8 @@ const teamMembersEn = [
     {
     name: "Brendo Teles",
     role: "2D / 3D / Animation Artist",
-    thumb: "/assets/images/team/brendo.png",
-    gif: "/assets/images/team/brendo.gif",
+    thumb: "/assets/images/team/teles.png",
+    gif: "/assets/images/team/teles.gif",
     desc: `Digital artist focused on 3D modeling, concept art, illustration, and basic 2D/3D animation for digital games and graphic materials. Experienced in projects such as Matemagos, Holobeast Academy, Thunder Riders, and Amazon Quest, contributing to visual development and supporting the artistic consistency and creative direction of the productions. Passionate about storytelling through stylized and engaging visuals.`,
     skills: [
       { name: "Illustration / Concept Art", value: 90 },
@@ -772,8 +772,8 @@ const teamMembersPt = [
   {
     name: "Brendo Teles",
     role: "Artista 2D / 3D e Animação",
-    thumb: "/assets/images/team/brendo.png",
-    gif: "/assets/images/team/brendo.gif",
+    thumb: "/assets/images/team/teles.png",
+    gif: "/assets/images/team/teles.gif",
     desc: `Artista digital com foco em modelagem 3D, concept art, ilustração e animação básica 2D/3D para jogos digitais e materiais gráficos. Experiência em projetos como Matemagos, Holobeast Academy, Thunder Riders e Amazon Quest, atuando no desenvolvimento visual e contribuindo para a consistência artística e direcionamento criativo das produções. Apaixonado por contar histórias através de visuais estilizados e envolventes.`,
     skills: [
       { name: "Ilustração / Concept Art", value: 90 },
