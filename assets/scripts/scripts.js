@@ -552,8 +552,8 @@ const teamMembersEn = [
   {
     name: "Miguel (Angel)",
     role: "Young Apprentice",
-    thumb: "assets/images/team/mohamed.png",
-    gif: "assets/images/team/mohamed.gif",
+    thumb: "/assets/images/team/mohamed.png",
+    gif: "/assets/images/team/mohamed.gif",
     desc: `Miguel, better known as Angel, has loved games since childhood. He has always been interested in game development, especially in how games can go beyond entertainment to convey emotions, knowledge, and unique challenges. Recently, he turned this passion into practice by improving his art and developing projects in GameMaker. He is constantly seeking to improve his skills and contribute to creating experiences that engage CHUVA's members.`,
     skills: [
       { name: "Game Maker Language (GML)", value: 60 },
@@ -593,8 +593,8 @@ const teamMembersEn = [
   {
     name: "Edpaulo Cardoso",
     role: "Foley Artist",
-    thumb: "assets/images/team/ed.png",
-    gif: "assets/images/team/ed.gif",
+    thumb: "/assets/images/team/ed.png",
+    gif: "/assets/images/team/ed.gif",
     desc: `Edpaulo Cardoso is a foley artist at CHUVA Games CO, bringing immersive experiences to life through sound. A graffiti artist, body piercer, and tattooist, he expresses his creativity in many forms. In his free time, he rides the winds as a kiterider across the rivers of the Amazon, in Pará, Brazil.`,
     skills: [
       { name: "Audio", value: 100 }
