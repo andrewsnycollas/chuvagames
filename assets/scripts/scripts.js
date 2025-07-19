@@ -591,11 +591,11 @@ const teamMembersEn = [
     ]
   },
   {
-    name: "ED",
+    name: "Edpaulo Cardoso",
     role: "Foley Artist",
     thumb: "assets/images/team/ed.png",
     gif: "assets/images/team/ed.gif",
-    desc: `Need a text.`,
+    desc: `Edpaulo Cardoso is a foley artist at CHUVA Games CO, bringing immersive experiences to life through sound. A graffiti artist, body piercer, and tattooist, he expresses his creativity in many forms. In his free time, he rides the winds as a kiterider across the rivers of the Amazon, in Pará, Brazil.`,
     skills: [
       { name: "Audio", value: 100 }
     ],
@@ -792,11 +792,11 @@ const teamMembersPt = [
     ]
   },
   {
-    name: "ED",
+    name: "Edpaulo Cardoso",
     role: "Artista de Foley",
     thumb: "/assets/images/team/ed.png",
     gif: "/assets/images/team/ed.gif",
-    desc: `Ed é um artista de foley que ainda não enviou o texto da biografia, mas assim que enviar o texto será exibido aqui. :)`,
+    desc: `Edpaulo Cardoso é artista de foley no estúdio CHUVA Games CO, onde dá vida aos sons que moldam experiências imersivas. Grafiteiro, body piercer e tatuador, expressa sua arte em múltiplas formas. Nas horas vagas, desliza pelos rios da Amazônia, no Pará, como kiterider apaixonado pela liberdade e pela natureza. `,
     skills: [
       { name: "Audio", value: 100 }
     ],
