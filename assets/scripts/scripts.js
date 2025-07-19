@@ -552,8 +552,8 @@ const teamMembersEn = [
   {
     name: "Miguel (Angel)",
     role: "Young Apprentice",
-    thumb: "/assets/images/team/mohamed.png",
-    gif: "/assets/images/team/mohamed.gif",
+    thumb: "/assets/images/team/angel.png",
+    gif: "/assets/images/team/angel.gif",
     desc: `Miguel, better known as Angel, has loved games since childhood. He has always been interested in game development, especially in how games can go beyond entertainment to convey emotions, knowledge, and unique challenges. Recently, he turned this passion into practice by improving his art and developing projects in GameMaker. He is constantly seeking to improve his skills and contribute to creating experiences that engage CHUVA's members.`,
     skills: [
       { name: "Game Maker Language (GML)", value: 60 },
